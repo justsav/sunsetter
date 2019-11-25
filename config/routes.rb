@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'locations/new'
-  get 'locations/create'
-  get 'locations/update'
-  get 'days/index'
+
   devise_for :users
   root to: 'pages#home'
 
