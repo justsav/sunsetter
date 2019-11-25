@@ -1,3 +1,8 @@
 <h1>Where you heading?</h1>
 
 
+<% @locations.each do |location| %>
+  <%= location.weather_info%>
+<% end %>
+
+<!-- how do we grab days from the API? I don't think we can with our account -->
