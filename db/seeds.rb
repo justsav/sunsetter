@@ -8,9 +8,10 @@
 
 # user1 = User.create(email: 'test@gmail.com', first_name: 'nick', password:'test123')
 # Location.create(city: 'lisbon', user_id: user1.id)
-
 require 'time'
 require 'date'
+
+City.new(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
 
 d = Date.today
 3.times do
