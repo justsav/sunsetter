@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_152328) do
+ActiveRecord::Schema.define(version: 2019_11_26_173618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 2019_11_26_152328) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "days", force: :cascade do |t|
+    t.string "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "places", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -46,6 +52,18 @@ ActiveRecord::Schema.define(version: 2019_11_26_152328) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_places_on_city_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating", null: false
+    t.string "image"
+    t.bigint "booking_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "sunsets", force: :cascade do |t|
@@ -77,5 +95,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_152328) do
   add_foreign_key "bookings", "places"
   add_foreign_key "bookings", "users"
   add_foreign_key "places", "cities"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "users"
   add_foreign_key "sunsets", "cities"
 end
