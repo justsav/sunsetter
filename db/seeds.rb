@@ -11,6 +11,8 @@
 require 'time'
 require 'date'
 
+Review.destroy_all
+User.destroy_all
 Sunset.destroy_all
 Place.destroy_all
 City.destroy_all
