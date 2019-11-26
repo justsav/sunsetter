@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_113641) do
+
+ActiveRecord::Schema.define(version: 2019_11_26_114719) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +25,16 @@ ActiveRecord::Schema.define(version: 2019_11_26_113641) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "days", force: :cascade do |t|
-    t.string "date", null: false
+  create_table "sunsets", force: :cascade do |t|
+    t.time "start", null: false
+    t.time "end", null: false
+    t.date "date", null: false
+    t.time "gold_start", null: false
+    t.time "gold_end", null: false
+    t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_sunsets_on_city_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -54,5 +62,9 @@ ActiveRecord::Schema.define(version: 2019_11_26_113641) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
   add_foreign_key "places", "cities"
+
+  add_foreign_key "sunsets", "cities"
+
 end
