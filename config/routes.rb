@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'cities/show'
-  get 'cities/index'
-  root to: 'pages#home'
+
+  root to: 'cities#index'
 
   devise_for :users
   resources :places
