@@ -1,8 +1,12 @@
 class PlacesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   def show
   end
 
   def index
+    raise
+    @city = City.find(params[:city_id])
+    @places = Place.where(city: @city)
   end
 
   def new
