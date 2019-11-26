@@ -11,14 +11,24 @@
 require 'time'
 require 'date'
 
-City.destroy_all
+Sunset.destroy_all
 Place.destroy_all
-
+City.destroy_all
 
 lisbon = City.create(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
 
-
-park_bar = Place.create(name: 'Park Bar', description: 'Super cool', address: 'Calçada do Combro, 58 Bairro Alto Lisbon', image: 'https://portugalconfidential.com/wp-content/uploads/2014/04/Park-Restaurante-Bar-Lisbon-1.jpg', city: 'Lisbon')
+Place.create(name: 'Park Bar',
+             description: 'Super cool',
+             address: 'Calçada do Combro, 58 Bairro Alto Lisbon',
+             image: 'https://portugalconfidential.com/wp-content/uploads/2014/04/Park-Restaurante-Bar-Lisbon-1.jpg',
+             city: lisbon)
+20.times do
+  Place.create(name: Faker::Address.community,
+               description: Faker::Lorem.paragraphs(number: 1)[0],
+               address: Faker::Address.full_address,
+               image: "https://source.unsplash.com/#{rand(250..400)}x#{rand(250..400)}/?sunset",
+               city: lisbon)
+end
 
 d = Date.today
 3.times do
@@ -31,5 +41,5 @@ Sunset.create(city: lisbon,
               )
 d += 1
 end
-
+puts "Seeding Completed!"
 
