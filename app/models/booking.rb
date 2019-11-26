@@ -5,5 +5,5 @@ class Booking < ApplicationRecord
 
 
   validates :date, presence: true
-  validates :public, presence: true, default: false
+
 end
