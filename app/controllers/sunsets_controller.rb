@@ -5,7 +5,7 @@ class SunsetsController < ApplicationController
     @sunsets = Sunset.all
 
     unless params[:city].empty?
-      @city = City.find_by(name: params[:city])
+      @city = City.find_by(name: params[:city].capitalize)
       @sunsets = @city.sunsets if @city
     end
   end
