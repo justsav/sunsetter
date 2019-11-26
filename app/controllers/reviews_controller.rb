@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
+  before_action :find_booking, only: [:index, :new, :create]
   def index
     raise
-    @booking = Booking.find(params[:booking_id])
     @reviews = Review.where(booking: @booking)
   end
 
@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.user = current_user
   end
 
   def edit
@@ -28,6 +29,10 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :content)
+    params.require(:review).permit(:rating, :content, :image)
+  end
+
+  def find_booking
+    @booking = Booking.find(params[:booking_id])
   end
 end
