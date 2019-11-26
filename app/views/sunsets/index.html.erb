@@ -3,6 +3,7 @@
 <%= link_to city_places_path(sunset.city, :date_session => sunset.date) do %>
 <h3><%= sunset.date %></h3>
 <% end %>
+<% session[:date] = "" %>
 <p>Sunset Timing: <%= sunset.start %> - <%= sunset.end %></p>
 <p>Golden Hour: <%= sunset.gold_start %> - <%= sunset.gold_end %></p>
 <br>
