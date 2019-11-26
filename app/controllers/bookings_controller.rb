@@ -15,8 +15,10 @@ class BookingsController < ApplicationController
    @booking.public = false
    @booking.user = current_user
    if @booking.save
+    session[:date] = nil
+    session[:place] = nil
     redirect_to root_path
-    end
+  end
 
   end
 
