@@ -1,4 +1,9 @@
-<%= @date %>
+<h1><%= @place.name %></h1>
+<%= image_tag(@place.image) %>
+<p>Description: <%= @place.description %></p>
+<p>Located at <%= @place.address %></p>
+<h3>Enjoy Sunset Here on <%= @date %></h3>
 
-
-<%= link_to 'Book This Place', bookings_new_path, class: 'btn btn-primary' %>
+<%= link_to 'Choose This Place', bookings_new_path, class: 'btn btn-primary' %>
+<% button_text = "Or Find Other Sunset Spots in #{@place.city.name}" %>
+<p><%= link_to button_text, city_places_path(@place.city) %></p>
