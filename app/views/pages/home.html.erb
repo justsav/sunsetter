@@ -1,0 +1,9 @@
+<h1>Where would you like to view the sunset?</h1>
+<%= form_tag sunsets_path, method: :get do %>
+  <%= text_field_tag :city,
+      params[:city],
+      class: "form-control",
+      placeholder: "Find a city"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>

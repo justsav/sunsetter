@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-
-  root to: 'cities#index'
+  root to: 'pages#home'
 
   devise_for :users
-  resources :places
-  resources :sunsets
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :cities, only: [:index] do
+    resources :places
+
+  end
+  resources :sunsets, only: [:index]
+
 end
