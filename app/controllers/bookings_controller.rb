@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
    if @booking.save
     session[:date] = nil
     session[:place] = nil
-    redirect_to root_path
+    redirect_to bookings_path
   end
 
   end
