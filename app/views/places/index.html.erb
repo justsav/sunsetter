@@ -1,8 +1,13 @@
 <h1>Choose From <%= @city.name %> Places to Enjoy Sunset</h1>
 <% @places.each do |place| %>
-  <%= link_to place_path(place) do %>
-    <%= image_tag(place.image) %>
-    <h3><%= place.name %></h3>
-  <% end %>
-
+<div class="card placecard" style="width: 18rem;">
+  <img src=<%= place.image %> class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= place.name %></h5>
+    <p class="card-text"><%= place.description %></p>
+    <div class="btn btn-secondary">
+      <%= link_to 'Learn More', place_path(place) %>
+    </div>
+  </div>
+</div>
 <% end %>
