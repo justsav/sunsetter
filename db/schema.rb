@@ -10,21 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_114719) do
+ActiveRecord::Schema.define(version: 2019_11_26_152328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "name"
+    t.string "state"
+    t.string "description"
+    t.bigint "user_id"
+    t.bigint "place_id"
+    t.date "date"
+    t.boolean "public"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_bookings_on_place_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.float "longitude"
     t.float "latitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "days", force: :cascade do |t|
-    t.string "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,6 +74,8 @@ ActiveRecord::Schema.define(version: 2019_11_26_114719) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "places"
+  add_foreign_key "bookings", "users"
   add_foreign_key "places", "cities"
   add_foreign_key "sunsets", "cities"
 end

@@ -18,9 +18,7 @@ Place.destroy_all
 lisbon = City.create(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
 
 
-park_bar = Place.new(name: 'Park Bar', description: 'Super cool', address: 'Calçada do Combro, 58 Bairro Alto Lisbon', image: 'https://portugalconfidential.com/wp-content/uploads/2014/04/Park-Restaurante-Bar-Lisbon-1.jpg')
-park_bar.city = lisbon
-park_bar.save!
+park_bar = Place.create(name: 'Park Bar', description: 'Super cool', address: 'Calçada do Combro, 58 Bairro Alto Lisbon', image: 'https://portugalconfidential.com/wp-content/uploads/2014/04/Park-Restaurante-Bar-Lisbon-1.jpg', city: 'Lisbon')
 
 d = Date.today
 3.times do

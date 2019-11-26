@@ -4,6 +4,7 @@
 <h3><%= sunset.date %></h3>
 <% session[:date] = sunset.date %>
 <% end %>
+<% session[:date] = "" %>
 <p>Sunset Timing: <%= sunset.start %> - <%= sunset.end %></p>
 <p>Golden Hour: <%= sunset.gold_start %> - <%= sunset.gold_end %></p>
 <br>
