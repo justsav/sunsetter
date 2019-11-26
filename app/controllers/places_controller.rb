@@ -4,7 +4,6 @@ class PlacesController < ApplicationController
   end
 
   def index
-    raise
     @city = City.find(params[:city_id])
     @places = Place.where(city: @city)
   end
