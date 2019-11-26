@@ -8,3 +8,18 @@
 
 # user1 = User.create(email: 'test@gmail.com', first_name: 'nick', password:'test123')
 # Location.create(city: 'lisbon', user_id: user1.id)
+
+require 'time'
+require 'date'
+
+d = Date.today
+3.times do
+Sunset.create(city: city.first,
+              start: '5:15pm',
+              end: '5:30pm',
+              gold_start: '4:00pm',
+              gold_end: '6:00pm',
+              date: d
+              )
+d += 1
+end
