@@ -24,7 +24,7 @@ park_bar.save!
 
 d = Date.today
 3.times do
-Sunset.create(city: city.first,
+Sunset.create(city: lisbon,
               start: '5:15pm',
               end: '5:30pm',
               gold_start: '4:00pm',
