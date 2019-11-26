@@ -1,0 +1,7 @@
+<h1>Choose From <%= @city.name %> Places to Enjoy Sunset</h1>
+<% @places.each do |place| %>
+  <%= link_to place_path(place) do %>
+    <%= image_tag(place.image) %>
+    <h3><%= place.name %></h3>
+  <% end %>
+<% end %>
