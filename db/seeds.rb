@@ -9,5 +9,12 @@
 # user1 = User.create(email: 'test@gmail.com', first_name: 'nick', password:'test123')
 # Location.create(city: 'lisbon', user_id: user1.id)
 
-City.new(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
+City.destroy_all
+Place.destroy_all
 
+lisbon = City.create(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
+
+
+park_bar = Place.new(name: 'Park Bar', description: 'Super cool', address: 'Calçada do Combro, 58 Bairro Alto Lisbon', image: 'https://portugalconfidential.com/wp-content/uploads/2014/04/Park-Restaurante-Bar-Lisbon-1.jpg')
+park_bar.city = lisbon
+park_bar.save!
