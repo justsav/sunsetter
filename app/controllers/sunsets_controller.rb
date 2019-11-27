@@ -9,4 +9,6 @@ class SunsetsController < ApplicationController
       @sunsets = @city.sunsets if @city
     end
   end
+
+
 end
