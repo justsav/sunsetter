@@ -1,10 +1,17 @@
-<h1>Choose The Best Day to Enjoy a <%= @city.name %> Sunset</h1>
-<% @sunsets.each do |sunset|  %>
-<%= link_to city_places_path(sunset.city, :date_session => sunset.date) do %>
-<h3><%= sunset.date %></h3>
-<% end %>
+<div class="sunset-bg">
+<h3>Choose The Best Day to Enjoy a <%= @city.name %> Sunset</h3>
+<div class="sunset-container">
+  <% @sunsets.each do |sunset| %>
+  <div class="sunset-card">
+    <%= image_tag('sunset_placeholder.png') %>
+    <div class="sunset-card-info">
+      <h2><%= sunset.date %></h2>
+      <p><strong>Sunset Timing: <%= sunset.start %> - <%= sunset.end %></strong></p>
+      <p><small class="text-muted">Golden Hour: <%= sunset.gold_start %> - <%= sunset.gold_end %></small></p>
+    </div>
+    <%= link_to 'OK', city_places_path(sunset.city, :date_session => sunset.date) %>
+  </div>
+  <% end %>
+</div>
 <% session[:date] = "" %>
-<p>Sunset Timing: <%= sunset.start %> - <%= sunset.end %></p>
-<p>Golden Hour: <%= sunset.gold_start %> - <%= sunset.gold_end %></p>
-<br>
-<% end %>
+</div>

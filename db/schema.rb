@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_182517) do
     t.string "description"
     t.bigint "user_id"
     t.bigint "place_id"
-    t.date "date", null: false
+    t.date "date"
     t.boolean "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
