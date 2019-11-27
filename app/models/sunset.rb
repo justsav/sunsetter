@@ -6,7 +6,4 @@ class Sunset < ApplicationRecord
   validates :gold_start, presence: true
   validates :gold_end, presence: true
   validates :date, presence: true
-
-
-
 end
