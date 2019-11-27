@@ -8,11 +8,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    raise
    @booking = Booking.new(booking_params)
    @booking.date = session[:date]
    @booking.place_id = session[:place]['id']
-   @booking.state = 'booked'
    @booking.public = false
    @booking.user = current_user
    if @booking.save
