@@ -1,1 +1,8 @@
 // Specific CSS for your home-page
+.sunset-bg {
+  background-image: asset-url('sunset_blur.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-color: black;
+}
