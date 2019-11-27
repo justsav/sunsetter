@@ -1,7 +1,11 @@
+.header-container {
+  text-align: center;
+  margin: 40px;
+}
 .body-container {
   display: flex;
   align-items: flex-start;
-  margin: 20px;
+  margin: 40px;
 }
 .places-grid {
   display: grid;
@@ -31,11 +35,13 @@
     opacity: .8;
    background: rgba(255, 255, 255, .2);
    color: rgba(255, 255, 255, 1);
-
   }
  }
 
  .card {
+
+  box-shadow: 0 8px 6px -6px black;
+  border: none;
 
   img {
     object-fit: cover;
@@ -49,13 +55,27 @@
 
  }
 
+ .card-title {
+  text-shadow: 0px 0px 1px black;
+
+ }
+
  .map-container {
-  margin-left: 15px;
+  margin-left: 30px;
  }
 
  #map {
   position: sticky;
   top: 100px;
+ }
+
+ .mapboxgl-popup {
+  max-width: 200px;
+ }
+
+ .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
  }
 
 
