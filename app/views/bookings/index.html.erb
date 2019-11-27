@@ -4,9 +4,10 @@
   <p><%= booking.date %></p>
   <p><%= booking.name %></p>
   <p><%= booking.description %></p>
-<div class="btn btn-secondary">
-  <%= link_to 'Review', new_review_path %>
-</div>
+
+  <%= link_to new_booking_review_path(booking.id) do %>
+  <div class="btn btn-primary">Review</div>
+  <% end %>
   <br>
   <br>
 <% end %>
