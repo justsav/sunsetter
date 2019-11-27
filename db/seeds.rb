@@ -33,7 +33,7 @@ Place.create(name: 'Park Bar',
 end
 
 d = Date.today
-3.times do
+5.times do
 Sunset.create(city: lisbon,
               start: '5:15pm',
               end: '5:30pm',
