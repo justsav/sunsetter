@@ -1,17 +1,36 @@
 <div class="sunset-bg">
-<h3>Choose The Best Day to Enjoy a <%= @city.name %> Sunset</h3>
-<div class="sunset-container">
-  <% @sunsets.each do |sunset| %>
-  <div class="sunset-card">
-    <%= image_tag('sunset_placeholder.png') %>
-    <div class="sunset-card-info">
-      <h2><%= sunset.date %></h2>
-      <p>Sunset Timing: <%= ApplicationHelper.converted_time(sunset.start) %> - <%= ApplicationHelper.converted_time(sunset.end) %></p>
-      <p>Golden Hour: <%= ApplicationHelper.converted_time(sunset.gold_start) %> - <%= ApplicationHelper.converted_time(sunset.gold_end) %></p>
+  <div class="sunset-choose-title">
+  <h3>Choose a Day for <%= @city.name %> Sunset</h3>
+</div>
+  <div class="sunset-container">
+    <% @sunsets.each do |sunset| %>
+      <%= link_to city_places_path(sunset.city, :date_session => sunset.date, :class => 'btn btn-primary') do %>
+
+    <div class="sunset-card">
+      <%= image_tag('sunset_placeholder.png') %>
+      <div class="container">
+        <div class="row">
+          <div class="sunset-card-title col-12">
+            <h2><%= sunset.date == Date.today ? 'Today' : sunset.date.strftime("%A, %e %b") %></h2>
+          </div>
+        </div>
+
+        <div class="sunset-card-info row">
+          <div class="sunset-card-sunset col-6">
+            <p>Golden Hour - <%= ApplicationHelper.converted_time(sunset.gold_start) %></p>
+            <p>Sunset Begin - <%= ApplicationHelper.converted_time(sunset.start) %></p>
+            <p>Sunset Actual - <%= ApplicationHelper.converted_time(sunset.end) %></p>
+          </div>
+          <div class="sunset-card-weather col-6">
+            <p>Mostly Sunny</p>
+            <p>27° - 30°C</p>
+            <p>No Precipitation</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <%= link_to 'OK', city_places_path(sunset.city, :date_session => sunset.date) %>
+    <% end %>
+    <% end %>
   </div>
-  <% end %>
 </div>
 <% session[:date] = "" %>
-</div>
