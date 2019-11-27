@@ -1,3 +1,7 @@
+.header-container {
+  text-align: center;
+  margin: 40px;
+}
 .body-container {
   display: flex;
   align-items: flex-start;
@@ -48,6 +52,11 @@
     opacity: .8;
 
   }
+
+ }
+
+ .card-title {
+  text-shadow: 0px 0px 1px black;
 
  }
 
