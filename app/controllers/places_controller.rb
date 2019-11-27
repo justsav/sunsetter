@@ -6,6 +6,13 @@ class PlacesController < ApplicationController
     @city = City.find(params[:city_id])
     @places = Place.where(city: @city)
     @date = session[:date]
+    @geocoded_places = Place.geocoded
+    @markers = @geocoded_places.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude
+      }
+    end
   end
 
   def show

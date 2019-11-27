@@ -1,8 +1,12 @@
-.places-grid {
+.body-container {
+  display: flex;
+  align-items: flex-start;
   margin: 20px;
+}
+.places-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 60vw;
+  width: 70vw;
   grid-gap: 10px;
 
 }
@@ -24,12 +28,19 @@
   text-align: center;
 
   &:hover {
-   background: rgba(255, 180, 114, .2);
+    opacity: .8;
+   background: rgba(255, 255, 255, .2);
    color: rgba(255, 255, 255, 1);
+
   }
  }
 
  .card {
+
+  img {
+    object-fit: cover;
+    height: 230px;
+  }
 
   &:hover {
     opacity: .8;
@@ -37,3 +48,14 @@
   }
 
  }
+
+ .map-container {
+  margin-left: 15px;
+ }
+
+ #map {
+  position: sticky;
+  top: 100px;
+ }
+
+
