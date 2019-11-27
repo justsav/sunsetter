@@ -1,13 +1,19 @@
-<h1>Choose From <%= @city.name %> Places to Enjoy Sunset</h1>
-<% @places.each do |place| %>
-<div class="card placecard" style="width: 18rem;">
-  <img src=<%= place.image %> class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><%= place.name %></h5>
-    <p class="card-text"><%= place.description %></p>
-    <div class="btn btn-secondary">
-      <%= link_to 'Learn More', place_path(place) %>
+<h1>Choose From <%= @city.name %> Places to Enjoy The Sunset</h1>
+<div class="card-container">
+  <div class="places-grid">
+    <% @places.each do |place| %>
+    <div class="place-card">
+      <%= link_to place_path(place) do %>
+      <div class="card bg-dark text-white">
+        <img src=<%= place.image %> class='card-img'>
+        <div class="card-img-overlay">
+          <h5 class="card-title"><%= place.name %></h5>
+          <p class="card-text"><%= place.description %></p>
+        </div>
+      </div>
+      <% end %>
     </div>
+    <% end %>
   </div>
 </div>
-<% end %>
+

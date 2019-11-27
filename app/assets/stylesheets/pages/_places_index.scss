@@ -1,0 +1,39 @@
+.places-grid {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60vw;
+  grid-gap: 10px;
+
+}
+
+.places-card {
+  max-height: 200px;
+}
+
+.card-img {
+  height: 200px;
+
+}
+
+.card-img-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &:hover {
+   background: rgba(255, 180, 114, .2);
+   color: rgba(255, 255, 255, 1);
+  }
+ }
+
+ .card {
+
+  &:hover {
+    opacity: .8;
+
+  }
+
+ }
