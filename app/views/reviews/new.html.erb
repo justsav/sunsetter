@@ -1,1 +1,7 @@
 <h1>Write a Review for <%= @booking.name.capitalize %> at <%= @booking.place.name %> on <%= @booking.date %></h1>
+
+<%= simple_form_for [@booking, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit 'Add Review', class: 'btn btn-primary' %>
+<% end %>
