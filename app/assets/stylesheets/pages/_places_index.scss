@@ -6,7 +6,7 @@
 .places-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 60vw;
+  width: 70vw;
   grid-gap: 10px;
 
 }
@@ -29,7 +29,7 @@
 
   &:hover {
     opacity: .8;
-   background: rgba(255, 180, 114, .2);
+   background: rgba(255, 255, 255, .2);
    color: rgba(255, 255, 255, 1);
   }
  }
@@ -38,6 +38,7 @@
 
   img {
     object-fit: cover;
+    height: 230px;
   }
 
   &:hover {
