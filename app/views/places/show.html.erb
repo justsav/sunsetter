@@ -7,3 +7,9 @@
 <% button_text = "Or Find Other Sunset Spots in #{@place.city.name}" %>
 <p><%= link_to button_text, city_places_path(@place.city) %></p>
 
+<% @place.reviews.each do |review| %>
+  <li><%= review.rating %> - <%= review.content %>
+      <%= cl_image_tag review.image, height: 300, width: 400, crop: :fill %>
+  </li>
+<% end %>
+
