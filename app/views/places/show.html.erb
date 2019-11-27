@@ -2,7 +2,16 @@
 <%= image_tag(@place.image) %>
 <p>Description: <%= @place.description %></p>
 <p>Located at <%= @place.address %></p>
-<h3>Enjoy Sunset Here on <%= @date %></h3>
+<h3>Enjoy Sunset Here on <%= session[:date] %></h3>
 <%= link_to 'Choose This Place', new_booking_path, class: 'btn btn-primary' %>
-<% button_text = "Or Find Other Sunset Spots in #{@place.city.name}" %>
-<p><%= link_to button_text, city_places_path(@place.city) %></p>
+
+<%= link_to city_places_path(@place.city, :date_session => @date) do %>
+
+  <p>Or Find Other Sunset Spots in <%= @place.city.name %></p>
+<% end %>
+<% @place.reviews.each do |review| %>
+  <li><%= review.rating %> - <%= review.content %>
+      <%= cl_image_tag review.image, height: 300, width: 400, crop: :fill %>
+  </li>
+<% end %>
+
