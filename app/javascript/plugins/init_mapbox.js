@@ -15,6 +15,7 @@ const initMapbox = () => {
       .setLngLat([ marker.lng, marker.lat ])
       .addTo(map);
   });
-}
+};
+};
 
 export { initMapbox };

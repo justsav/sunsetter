@@ -21,7 +21,7 @@ lisbon = City.create(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
 
 Place.create(name: 'Park Bar',
              description: 'Super cool',
-             address: 'Calçada do Combro, 58 Bairro Alto Lisbon',
+             address: '58 Bairro Alto Lisbon',
              image: 'https://portugalconfidential.com/wp-content/uploads/2014/04/Park-Restaurante-Bar-Lisbon-1.jpg',
              city: lisbon)
 20.times do
