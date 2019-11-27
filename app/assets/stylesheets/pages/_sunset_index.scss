@@ -3,6 +3,8 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  background-color: black;
+  overflow-y: auto;
 }
 
 .sunset-choose-title {
@@ -41,7 +43,7 @@
   max-height: 100px;
   object-fit: cover;
   padding: 15px;
-  }
+}
 
 .sunset-card-title h2 {
   font-size: 16px;
@@ -60,7 +62,4 @@
 
 .sunset-card-sunset {
   min-width: 200px;
-}
-
-.sunset-card-weather {
 }
