@@ -1,0 +1,56 @@
+.places-show-bg {
+  background: linear-gradient(#ffffc1, #ffd2a5, #d38cab, #8a79af);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-color: black;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.places-show-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.place-description {
+  h5 {
+    font-size: 12px;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+}
+
+.place-address {
+  h5 {
+    font-size: 12px;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+}
+
+.place-positive {
+  margin-top: 20px;
+}
+
+.places-show-container img {
+  width: 500px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  position: relative;
+  margin-top: 25px;
+}
+
+.places-detail-card {
+  display: flex;
+  background: #f8f8f8;
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+  margin-top: -40px;
+  border-radius: 4px;
+  margin-bottom: 100px;
+}
+
+.place-title {
+  margin-top: 50px;
+}

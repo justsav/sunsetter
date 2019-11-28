@@ -1,17 +1,54 @@
-<h1><%= @place.name %></h1>
-<%= image_tag(@place.image) %>
-<p>Description: <%= @place.description %></p>
-<p>Located at <%= @place.address %></p>
-<h3>Enjoy Sunset Here on <%= session[:date] %></h3>
-<%= link_to 'Choose This Place', new_booking_path, class: 'btn btn-primary' %>
+<div class="places-show-bg">
 
-<%= link_to city_places_path(@place.city, :date_session => @date) do %>
+  <div class="places-show-container">
+    <%= image_tag(@place.image, style: 'box-shadow: 1px 1px 5px black') %>
 
-  <p>Or Find Other Sunset Spots in <%= @place.city.name %></p>
-<% end %>
-<% @place.reviews.each do |review| %>
-  <li><%= review.rating %> - <%= review.content %>
-      <%= cl_image_tag review.image, height: 300, width: 400, crop: :fill %>
-  </li>
-<% end %>
+    <div class="places-detail-card">
+      <div class="container">
 
+      <div class="row">
+        <div class="place-title col-12">
+          <h1><%= @place.name %></h1>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 15px">
+        <div class="place-description col-6">
+          <h5>Description</h5>
+          <p><%= @place.description %></p>
+        </div>
+        <div class="place-address col-6">
+          <h5>Located at</h5>
+          <p><%= @place.address %></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="place-positive col-12">
+          <h3>Enjoy Sunset Here on <%= Date.parse(session[:date]).strftime("%A, %e %b") %></h3>
+          <%= link_to 'Choose This Place', new_booking_path, class: 'btn btn-primary', style:'margin-top: 20px' %></h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="place-negative col-12">
+          <%= link_to city_places_path(@place.city, :date_session => @date) do %>
+          <p style="margin-top: 10px">Or Find Other Sunset Spots in <%= @place.city.name %></p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="place-review col-12">
+          <% @place.reviews.each do |review| %>
+          <li><%= review.rating %> - <%= review.content %>
+            <%= cl_image_tag review.image, height: 300, width: 400, crop: :fill %>
+          </li>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</div>
