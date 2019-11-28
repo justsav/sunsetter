@@ -1,9 +1,30 @@
-<h1>Where would you like to view the sunset?</h1>
+<div class="landing-bg">
+<div class="landing-container">
+<div class="container">
+<div class="landing-title">
+<h1 style="font-family: Calistoga">Sunsetter</h1>
+</div>
+<div class="landing-subtitle">
+<h3>Where the day ends, and your experience begins.</h3>
+</div>
+<div class="row">
+<div class="col-8">
+<div class="landing-city-input">
 <%= form_tag sunsets_path, method: :get do %>
   <%= text_field_tag :city,
       params[:city],
       class: "form-control",
-      placeholder: "Find a city"
+      placeholder: "Enter Your City"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+</div>
+</div>
+<div class="col-4">
+<div class="landing-form-action">
+  <%= submit_tag "Begin", class: "btn btn-dark" %>
+</div>
+</div>
+</div>
 <% end %>
+</div>
+</div>
+</div>

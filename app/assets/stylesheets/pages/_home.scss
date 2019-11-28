@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+.landing-bg {
+  background-image: asset-url('home_bg.png');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  background-color: white;
+}
+
+.landing-container {
+  margin-left: 100px;
+  width: 380px;
+}
+
+.landing-title {
+  padding-top: 60px;
+  h1 {
+  font-family: 'Calistoga';
+  font-size: 80px;
+  margin-bottom: 0px;
+  }
+}
+
+.landing-subtitle {
+  margin-bottom: 30px;
+}
+
+.landing-city-input {
+  // width: 200px;
+  // margin-top: 30px;
+  // margin-bottom: 15px;
+}
+.landing-form-action {
+  // width: 200px;
+}
