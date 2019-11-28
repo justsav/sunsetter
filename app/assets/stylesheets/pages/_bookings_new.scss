@@ -1,0 +1,41 @@
+.bookings-bg {
+  background: linear-gradient(#ffffc1, #ffd2a5, #d38cab, #8a79af);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-color: black;
+  overflow-y: auto;
+}
+
+.bookings-new-container {
+  margin: auto;
+}
+
+.bookings-new-card {
+  display: flex;
+  background: #f8f8f8;
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+  margin-top: 50px;
+  border-radius: 4px;
+  margin-bottom: 100px;
+}
+
+
+.bookings-new-detail {
+  padding-right: 0;
+  padding: 50px;
+}
+
+
+.bookings-new-sun {
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 50px;
+  img {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+  }
+
+}

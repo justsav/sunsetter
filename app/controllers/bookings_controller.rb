@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     @date = session[:date]
     @place = session[:place]
     @city = City.find_by(id: @place['city_id'])
+    @sunset = Sunset.where(date: @date, city: @city)[0]
   end
 
   def create
