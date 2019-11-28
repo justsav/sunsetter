@@ -1,5 +1,5 @@
 .sunset-bg {
-  background-image: asset-url('sunset_blur.jpg');
+  background: linear-gradient(#ffffc1, #ffd2a5, #d38cab, #8a79af);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -7,14 +7,14 @@
   overflow-y: auto;
 }
 
-.sunset-choose-title {
+.sunset-choose-title h3 {
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
+  color: black;
   font-weight: bold;
-  color: white;
-  text-shadow: 0px 1px 3px black;
-  margin-bottom: 30px;
-  padding-top: 30px;
+  // text-shadow: 1px 1px 4px white;
+  margin-bottom: 25px;
+  padding-top: 25px;
 }
 
 .sunset-container {
@@ -29,7 +29,7 @@
 .sunset-card {
   display: flex;
   height: 140px;
-  background: white;
+  background: #f8f8f8;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 20px;
   border-radius: 6px;
