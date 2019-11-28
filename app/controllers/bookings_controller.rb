@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
     @upcoming_bookings = @bookings.where('date > ?', Date.today)
     @booking_today = @bookings.where(date: Date.today)[0]
 
+
   end
 
   def new
