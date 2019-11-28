@@ -1,9 +1,26 @@
-<h1>Your Booking for <%= @place['name']%> on <%= @date %> in <%= @city.name %></h1>
-
-
-<%= simple_form_for(@booking) do |f| %>
-<%= f.input :name %>
-<%= f.input :description %>
-<%= f.submit %>
-<% end %>
-
+<div class="bookings-bg">
+  <div class="bookings-new-container">
+    <div class="container">
+      <div class="bookings-new-card">
+      <div class="row">
+        <div class="bookings-new-detail col-7">
+          <h1>Get Excited.</h1>
+          <h3 style="margin-bottom: 30px">You're planning sunset for <%= @place['name']%>.</h3>
+          <%= simple_form_for(@booking) do |f| %>
+          <%= f.input :name, label: 'Name This Event:', placeholder: "My Cool Sunset" %>
+          <%= f.input :description, as: :text, input_html: {rows: 3}, label: 'Event Description:', placeholder: "Let friends know more details about your event." %>
+          <%= f.submit 'Finish Plan' %>
+          <% end %>
+        </div>
+        <div class="bookings-new-sun col-5">
+          <%= image_tag(@place['image']) %>
+          <h5><%= @city.name %> Sunset Details for <%= Date.parse(@date).strftime("%A, %e %B") %>:</h5>
+          <p>Golden Hour - <%= ApplicationHelper.converted_time(@sunset.gold_start) %></p>
+          <p>Sunset Begin - <%= ApplicationHelper.converted_time(@sunset.start) %></p>
+          <p>Sunset Actual - <%= ApplicationHelper.converted_time(@sunset.end) %></p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
