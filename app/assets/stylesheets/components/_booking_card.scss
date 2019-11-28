@@ -1,0 +1,68 @@
+.booking-card {
+  width: 100%;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+.today-booking-card {
+  height: 342px;
+  width: 932px;
+}
+
+#today-image {
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
+.today-card-body {
+ padding: 46px;
+ height: 48%;
+ padding-bottom: 0;
+
+}
+
+.today-date-container {
+ text-align: right;
+ padding: 1rem;
+ font-size: .8em;
+ opacity: .8;
+ color: grey;
+ padding-bottom: 0;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.card-title {
+  margin-bottom: 0;
+}
+
+.today-card-place-info {
+  text-align: center;
+  margin: 0 32px 0 32px;
+  height: 32%;
+
+  p {
+    opacity: .6;
+    margin-bottom: 0;
+  }
+}
+
+.share {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.share-links {
+  width: 10%;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding-right: 10px;
+  padding-left: 0;
+  color: orange;
+}
