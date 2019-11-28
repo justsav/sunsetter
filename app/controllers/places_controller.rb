@@ -18,6 +18,9 @@ class PlacesController < ApplicationController
 
   def show
     store_session_place
+    if session[:date].nil?
+      store_session_date
+    end
     @place = Place.find(params[:id])
     @date = session[:date]
   end

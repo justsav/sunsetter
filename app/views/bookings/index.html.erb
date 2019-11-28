@@ -1,13 +1,25 @@
-<h1>My Sunset Plans</h1>
-<% @bookings.each do |booking| %>
-  <%= image_tag(booking.place.image, width: "10%") %>
-  <p><%= booking.date %></p>
-  <p><%= booking.name %></p>
-  <p><%= booking.description %></p>
-
-  <%= link_to new_booking_review_path(booking.id) do %>
-  <div class="btn btn-primary">Review</div>
-  <% end %>
-  <br>
-  <br>
+<div class="header-container">
+  <h2>Today's Sunset</h2>
+</div>
+<div class="today-card-container">
+  <div class="today-card-grid">
+    <% if @booking_today %>
+      <%= render 'today_card' %>
+    <% else %>
+      <p>You don't have any sunset plans for today....</p>
+    <% end %>
+  </div>
+</div>
+<div class="header-container">
+  <h1>Upcoming Sunset Plans</h1>
+</div>
+<% if @upcoming_bookings%>
+  <%= render 'upcoming_cards' %>
+<% else %>
+<p>You don't have any upcoming sunsets planned... Would you like to add one?</p>
 <% end %>
+
+
+
+
+

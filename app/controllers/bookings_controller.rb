@@ -1,8 +1,21 @@
 class BookingsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:new, :create]
+
+  def index
+    @user = current_user
+    @bookings = Booking.all.where(user_id: current_user).order(date: :asc)
+    @upcoming_bookings = @bookings.where('date > ?', Date.today)
+    @booking_today = @bookings.where(date: Date.today)[0]
+
+  end
+
   def new
-    @booking = Booking.new
+    @user = current_user
     @date = session[:date]
+    if @user.bookings.exists?(date: @date)
+      redirect_to place_path(session[:place]['id'])
+      flash[:notice] = "You have already booked a sunset for this date!"
+    end
+    @booking = Booking.new
     @place = session[:place]
     @city = City.find_by(id: @place['city_id'])
     @sunset = Sunset.where(date: @date, city: @city)[0]
@@ -14,10 +27,15 @@ class BookingsController < ApplicationController
    @booking.place_id = session[:place]['id']
    @booking.public = false
    @booking.user = current_user
-   if @booking.save
+
+   if @booking.save!
     session[:date] = nil
     session[:place] = nil
     redirect_to bookings_path
+    flash[:notice] = "You've booked a sunset at #{@booking.place.name} on #{@booking.date}"
+  else
+    redirect_to sunsets_path
+    flash[:notice] = "You already have a sunset booked for this date!"
   end
 
   end
@@ -26,9 +44,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def index
-    @bookings = Booking.all
-  end
+
 
   def update
   end

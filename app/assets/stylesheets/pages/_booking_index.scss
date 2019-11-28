@@ -1,0 +1,25 @@
+.booking-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.card-container {
+  margin: 70px;
+}
+
+.header-container {
+  text-align: center;
+}
+
+.today-card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.today-card-grid {
+  display: flex;
+  justify-content: center;
+}
