@@ -1,8 +1,9 @@
-<div class="header-container">
-  <h2>Today's Sunset</h2>
-</div>
+<div class="container-container">
 <div class="today-card-container">
   <div class="today-card-grid">
+    <div class="header-container">
+      <h2>Today's Sunset</h2>
+    </div>
     <% if @booking_today %>
       <%= render 'today_card' %>
     <% else %>
@@ -10,13 +11,19 @@
     <% end %>
   </div>
 </div>
-<div class="header-container">
+</div>
+
+<div class="header-container upcoming-header-container">
   <h1>Upcoming Sunset Plans</h1>
 </div>
-<% if @upcoming_bookings%>
-  <%= render 'upcoming_cards' %>
+<div class="many-card-container">
+  <div class="upcoming-cards-container">
+  <% unless @upcoming_bookings.empty?%>
+    <%= render 'upcoming_cards' %>
+  </div>
+</div>
 <% else %>
-<p>You don't have any upcoming sunsets planned... Would you like to add one?</p>
+  <p class="no-upcoming-sunsets">You don't have any upcoming sunsets planned... Would you like to add one?</p>
 <% end %>
 
 
