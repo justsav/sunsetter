@@ -5,5 +5,7 @@ class Booking < ApplicationRecord
 
 
   validates :date, presence: true
+  validates :date, uniqueness: { scope: :user,
+    message: "You've already made a booking for this date." }
 
 end

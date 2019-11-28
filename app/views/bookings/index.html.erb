@@ -1,13 +1,61 @@
-<h1>My Sunset Plans</h1>
-<% @bookings.each do |booking| %>
-  <%= image_tag(booking.place.image, width: "10%") %>
-  <p><%= booking.date %></p>
-  <p><%= booking.name %></p>
-  <p><%= booking.description %></p>
+<div class="header-container">
+  <h2>Today's Sunset</h2>
+</div>
+<div class="today-card-container">
+  <div class="today-card-grid">
+    <% if @booking_today %>
+    <div class="card mb-3 today-booking-card" >
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <%= link_to place_path(@booking_today.place.id) do %>
+          <%= image_tag(@booking_today.place.image, class: "card-img-top", id: "today-image") %>
+        </div>
+        <% end %>
+        <div class="col-md-8 row-md-8">
+          <div class="today-date-container">
+            <p><%= @booking_today.date %></p>
+            </div>
+            <div class="card-body today-card-body">
+              <div class="title-description">
+                <h2 class="card-title"><%= @booking_today.name.capitalize %> at <%= @booking_today.place.name %></h2>
+                <p class="card-text"><%= @booking_today.place.address %></p>
+              </div>
+            </div>
+            <div class="today-card-place-info">
+              <p><%= @booking_today.description.capitalize %></p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<div class="header-container">
+  <h1>Upcoming Sunset Plans</h1>
+</div>
+<div class="card-container">
+  <div class="booking-card-grid">
+    <% @bookings.each do |booking| %>
+    <div class="card mb-3 booking-card" >
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <%= link_to place_path(booking.place.id) do %>
+          <%= image_tag(booking.place.image, class: "card-img-top") %>
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.name.capitalize %> on <%= booking.date %></h5>
+            <p class="card-text"><%= booking.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-  <%= link_to new_booking_review_path(booking.id) do %>
-  <div class="btn btn-primary">Review</div>
-  <% end %>
-  <br>
-  <br>
-<% end %>
+
+
+
+
