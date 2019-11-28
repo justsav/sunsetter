@@ -1,4 +1,6 @@
-<h1>Choose From <%= @city.name %> Places to Enjoy The Sunset</h1>
+<div class="header-container">
+  <h1>Choose From <%= @city.name %> Places to Enjoy The Sunset</h1>
+</div>
 <div class="body-container">
   <div class="card-container">
     <div class="places-grid">
@@ -8,7 +10,7 @@
         <div class="card bg-dark text-white">
           <img src=<%= place.image %> class='card-img'>
           <div class="card-img-overlay">
-            <h5 class="card-title"><%= place.name %></h5>
+            <h3 class="card-title"><%= place.name %></h3>
             <p class="card-text"><%= place.description %></p>
           </div>
         </div>
