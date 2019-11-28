@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:new, :create]
+
+  def index
+    @bookings = Booking.all.order(date: :asc)
+  end
+
   def new
     @booking = Booking.new
     @date = session[:date]
@@ -25,9 +29,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def index
-    @bookings = Booking.all
-  end
+
 
   def update
   end
