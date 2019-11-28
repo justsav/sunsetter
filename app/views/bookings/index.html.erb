@@ -4,66 +4,20 @@
 <div class="today-card-container">
   <div class="today-card-grid">
     <% if @booking_today %>
-    <div class="card mb-3 today-booking-card" >
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <%= link_to place_path(@booking_today.place.id) do %>
-          <%= image_tag(@booking_today.place.image, class: "card-img-top", id: "today-image") %>
-        </div>
-        <% end %>
-        <div class="col-md-8 row-md-8">
-          <div class="today-date-container">
-            <p><%= @booking_today.date %></p>
-            </div>
-            <div class="card-body today-card-body">
-              <div class="title-description">
-                <h2 class="card-title"><%= @booking_today.name.capitalize %> at <%= @booking_today.place.name %></h2>
-                <p class="card-text"><%= @booking_today.place.address %></p>
-              </div>
-            </div>
-            <div class="today-card-place-info">
-              <p><%= @booking_today.description.capitalize %></p>
-            </div>
-            <div class="share">
-              <ul class='share-links'>
-                <%= link_to '#' do %>
-                  <li><i class="fab fa-facebook"></i></li>
-                <% end %>
-                <%= link_to '#' do %>
-                 <li><i class="fab fa-twitter"></i></li>
-                <% end %>
-              </ul>
-            </div>
-        </div>
-      </div>
-    </div>
+      <%= render 'today_card' %>
+    <% else %>
+      <p>You don't have any sunset plans for today....</p>
     <% end %>
   </div>
 </div>
 <div class="header-container">
   <h1>Upcoming Sunset Plans</h1>
 </div>
-<div class="card-container">
-  <div class="booking-card-grid">
-    <% @bookings.each do |booking| %>
-    <div class="card mb-3 booking-card" >
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <%= link_to place_path(booking.place.id) do %>
-          <%= image_tag(booking.place.image, class: "card-img-top") %>
-          <% end %>
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title"><%= booking.name.capitalize %> on <%= booking.date %></h5>
-            <p class="card-text"><%= booking.description %></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
+<% if @upcoming_bookings%>
+  <%= render 'upcoming_cards' %>
+<% else %>
+<p>You don't have any upcoming sunsets planned... Would you like to add one?</p>
+<% end %>
 
 
 

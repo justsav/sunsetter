@@ -12,7 +12,7 @@
           <div class="container">
             <div class="row">
               <div class="sunset-card-title col-12">
-                <h2><%= sunset.date == Date.today ? 'Today' : sunset.date.strftime("%A, %e %b") %></h2>
+                <h2><%= sunset.date == Date.today ? 'Today' : ApplicationHelper.convert_day(sunset.date) %></h2>
               </div>
             </div>
 

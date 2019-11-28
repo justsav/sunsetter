@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def index
     @user = current_user
     @bookings = Booking.all.where(user_id: current_user).order(date: :asc)
+    @upcoming_bookings = @bookings.where('date > ?', Date.today)
     @booking_today = @bookings.where(date: Date.today)[0]
 
   end
@@ -11,7 +12,6 @@ class BookingsController < ApplicationController
     @user = current_user
     @date = session[:date]
     if @user.bookings.exists?(date: @date)
-      # raise
       redirect_to place_path(session[:place]['id'])
       flash[:notice] = "You have already booked a sunset for this date!"
     end
