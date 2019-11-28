@@ -24,6 +24,16 @@
             <div class="today-card-place-info">
               <p><%= @booking_today.description.capitalize %></p>
             </div>
+            <div class="share">
+              <ul class='share-links'>
+                <%= link_to '#' do %>
+                  <li><i class="fab fa-facebook"></i></li>
+                <% end %>
+                <%= link_to '#' do %>
+                 <li><i class="fab fa-twitter"></i></li>
+                <% end %>
+              </ul>
+            </div>
         </div>
       </div>
     </div>
