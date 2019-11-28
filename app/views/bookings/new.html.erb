@@ -1,6 +1,5 @@
 <h1>Your Booking for <%= @place['name']%> on <%= @date %> in <%= @city.name %></h1>
 
-
 <%= simple_form_for(@booking) do |f| %>
 <%= f.input :name %>
 <%= f.input :description %>
