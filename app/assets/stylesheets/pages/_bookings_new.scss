@@ -24,6 +24,9 @@
 .bookings-new-detail {
   padding-right: 0;
   padding: 50px;
+  h1 {
+    font-family: 'Calistoga';
+  }
 }
 
 
@@ -31,11 +34,18 @@
     text-align: center;
     padding-top: 30px;
     padding-right: 50px;
+    margin-bottom: 40px;
   img {
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
     box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+  }
+  h5 {
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: 0px;
   }
 
 }
