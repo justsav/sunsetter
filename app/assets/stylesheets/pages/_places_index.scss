@@ -8,20 +8,23 @@ overflow-y: auto;
 text-align: center;
 }
 
-.header-container {
+.places-header-container {
   text-align: center;
   margin: 20px;
   margin-top: 10px;
+  // margin-top: 76px;
   margin-bottom: 0;
   h1 {
     font-weight: bold;
   }
 }
-.body-container {
+.places-body-container {
   display: flex;
   align-items: flex-start;
   margin: 40px;
   margin-top: 20px;
+  // margin-top: 0;
+
 }
 .places-grid {
   display: grid;
