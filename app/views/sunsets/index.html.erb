@@ -8,7 +8,7 @@
       <%= link_to city_places_path(sunset.city, :date_session => sunset.date, :class => 'btn btn-primary') do %>
 
         <div class="sunset-card">
-          <%= image_tag('sunset_placeholder.png') %>
+          <%= image_tag("#{sunset.icon}") %>
           <div class="container">
             <div class="row">
               <div class="sunset-card-title col-12">
