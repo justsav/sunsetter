@@ -19,6 +19,7 @@ Place.destroy_all
 City.destroy_all
 
 lisbon = City.create(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
+WEATHER = ['clear', 'broken clouds', 'scatered clouds', 'light rain']
 
 PLACES = [{ name: 'Miradouro Santa Luzia',
             image: 'https://img.theculturetrip.com/768x432/wp-content/uploads/2017/03/shutterstock_603926126-ttstudio.jpg',
@@ -125,11 +126,13 @@ Place.create(name: 'Park Bar',
 d = Date.today
 10.times do
 Sunset.create(city: lisbon,
-              start: '5:15pm',
-              end: '5:30pm',
-              gold_start: '4:00pm',
-              gold_end: '6:00pm',
-              date: d
+              start: "5:#{rand(10..27)}pm",
+              end: "5:#{rand(35..45)}pm",
+              gold_start: "4:#{rand(40..59)}pm",
+              date: d,
+              description: WEATHER.sample,
+              tempmin: "#{rand(32..50)}°F",
+              tempmax: "#{rand(51..72)}°F"
               )
 d += 1
 end
