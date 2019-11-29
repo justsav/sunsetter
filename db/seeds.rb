@@ -22,7 +22,7 @@ lisbon = City.create(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
 
 PLACES = [{ name: 'Miradouro Santa Luzia',
             image: 'https://img.theculturetrip.com/768x432/wp-content/uploads/2017/03/shutterstock_603926126-ttstudio.jpg',
-            address: 'Largo Santa Luzia',
+            address: 'Largo Santa Luzia, Lisbon',
             city: lisbon,
             description: Faker::ChuckNorris.fact
           },
@@ -37,7 +37,7 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
 
           { name: 'Miradouro da Senhora do Monte',
             image: 'https://sumfinity.com/wp-content/uploads/2019/02/Sunset-View-Lisbon-Portugal-evening.jpg',
-            address: 'Largo Monte',
+            address: 'Largo Monte, Lisbon',
             city: lisbon,
             description: Faker::ChuckNorris.fact
 
@@ -69,7 +69,7 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
 
           { name: 'Alameda',
             image: 'https://media2.trover.com/T/547fe68bd809d85c0b00036e/fixedw_large_4x.jpg',
-            address: 'Alameda',
+            address: lisbon,
             city: lisbon,
             description: Faker::ChuckNorris.fact
 
@@ -85,7 +85,7 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
 
           { name:'Miradouro Portas do Sol',
             image:'https://img.theculturetrip.com/768x432/wp-content/uploads/2017/01/porto-1972486_1920.jpg',
-            address: 'Miradouro da Senhora do Monte',
+            address: 'Miradouro da Senhora do Monte, Lisbon',
             city: lisbon,
             description: Faker::ChuckNorris.fact
 
@@ -118,6 +118,8 @@ Place.create(name: 'Park Bar',
            image: 'https://portugalconfidential.com/wp-content/uploads/2014/04/Park-Restaurante-Bar-Lisbon-1.jpg',
            city: lisbon)
 
+
+# dweather and sunset seeds
 
 
 d = Date.today
