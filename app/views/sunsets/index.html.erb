@@ -23,9 +23,9 @@
                 <p>Sunset Actual - <%= ApplicationHelper.converted_time(sunset.end) %></p>
               </div>
               <div class="sunset-card-weather col-6">
-                <p>Mostly Sunny</p>
-                <p>27° - 30°C</p>
-                <p>No Precipitation</p>
+                <p>Weather: <%= sunset.description %></p>
+                <p>Temp Range: <%= sunset.tempmin %>-<%= sunset.tempmax %></p>
+                <p></p>
               </div>
             </div>
           </div>
