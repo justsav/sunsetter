@@ -1,3 +1,5 @@
+<div class="container">
+<div class="booking-body-container">
 <div class="container-container">
 <div class="today-card-container">
   <div class="today-card-grid">
@@ -8,11 +10,13 @@
       <%= render 'today_card' %>
     <% else %>
       <p>You don't have any sunset plans for today....</p>
+      <%= image_tag 'no-sunsets', class: "no-sunsets" %>
     <% end %>
   </div>
 </div>
 </div>
 
+<div class="upcoming-plans">
 <div class="header-container upcoming-header-container">
   <h1>Upcoming Sunset Plans</h1>
 </div>
@@ -21,11 +25,13 @@
   <% unless @upcoming_bookings.empty?%>
     <%= render 'upcoming_cards' %>
   </div>
-</div>
 <% else %>
   <p class="no-upcoming-sunsets">You don't have any upcoming sunsets planned... Would you like to add one?</p>
 <% end %>
-
+</div>
+</div>
+</div>
+</div>
 
 
 
