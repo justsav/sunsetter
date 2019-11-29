@@ -11,6 +11,7 @@ text-align: center;
 .header-container {
   text-align: center;
   margin: 20px;
+  margin-top: 10px;
   margin-bottom: 0;
   h1 {
     font-weight: bold;
@@ -20,12 +21,16 @@ text-align: center;
   display: flex;
   align-items: flex-start;
   margin: 40px;
+  margin-top: 20px;
 }
 .places-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 70vw;
+  width: 50vw;
   grid-gap: 10px;
+  @media only screen and (max-width: 500px) {
+    display: block;
+  }
 
 }
 
@@ -76,11 +81,15 @@ text-align: center;
 
  .map-container {
   margin-left: 30px;
+    @media only screen and (max-width: 990px) {
+    display: none;
+  }
  }
 
  #map {
   position: sticky;
-  top: 100px;
+  top: 20px;
+  width: 200px;
  }
 
  .mapboxgl-popup {
@@ -93,8 +102,9 @@ text-align: center;
  }
 
  .mapboxgl-canvas {
-  margin: 69px 12px 12px;
-  width: 272px;
+
+  // margin: 69px 12px 12px;
+  // width: 272px;
  }
 
 
