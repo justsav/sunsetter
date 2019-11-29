@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_162545) do
+ActiveRecord::Schema.define(version: 2019_11_29_135202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_162545) do
     t.string "description"
     t.bigint "user_id"
     t.bigint "place_id"
-    t.date "date"
+    t.date "date", null: false
     t.boolean "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 2019_11_27_162545) do
     t.string "name"
     t.float "longitude"
     t.float "latitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "days", force: :cascade do |t|
+    t.string "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,6 +76,10 @@ ActiveRecord::Schema.define(version: 2019_11_27_162545) do
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
+    t.string "icon"
+    t.integer "tempmin"
+    t.integer "tempmax"
     t.index ["city_id"], name: "index_sunsets_on_city_id"
   end
 
