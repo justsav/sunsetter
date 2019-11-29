@@ -16,7 +16,7 @@
 
 .place-description {
   h5 {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bolder;
     text-transform: uppercase;
   }
@@ -24,7 +24,7 @@
 
 .place-address {
   h5 {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bolder;
     text-transform: uppercase;
   }
@@ -32,6 +32,10 @@
 
 .place-positive {
   margin-top: 20px;
+}
+
+.place-negative {
+  margin-bottom: 25px;
 }
 
 .places-show-container img {

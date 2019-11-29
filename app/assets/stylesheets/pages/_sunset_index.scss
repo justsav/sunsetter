@@ -31,7 +31,7 @@
 .sunset-card {
   display: flex;
   height: 140px;
-  background: #f8f8f8;
+  background: rgb(200,200,200);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 20px;
   border-radius: 6px;
@@ -54,8 +54,13 @@
   margin-bottom: 0px;
 }
 
+.sunset-card-weather {
+  p {
+    font-size: 15px;
+  }
+}
+
 .sunset-card p {
-  font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -64,6 +69,9 @@
 
 .sunset-card-sunset {
   min-width: 200px;
+  p {
+    font-size: 12px;
+  }
 }
 
 .no-upcoming-sunsets {
