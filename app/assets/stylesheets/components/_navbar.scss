@@ -24,24 +24,23 @@
 
 .fixed-top {
   opacity: 1;
-  background: #f4f4f4;
+  background: white;
 }
 
 .fixed-top.scrolled {
-  background-color: black !important;
   opacity: .8;
   transition: background-color 200ms linear;
 
   a {
-    color: white;
+    color: black;
   }
 
   .icon {
-    color: white;
+    color: #6B6B6B;
   }
 
   .navbar-toggler {
-    background-color: white;
+    background-color: #6B6B6B;
     opacity: .4;
   }
 
