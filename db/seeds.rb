@@ -101,12 +101,6 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
 
 ]
 
-# Review.destroy_all
-# User.destroy_all
-# Sunset.destroy_all
-# Place.destroy_all
-# City.destroy_all
-
 
 PLACES.each do |place|
   Place.create(
@@ -125,31 +119,6 @@ Place.create(name: 'Park Bar',
            city: lisbon)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 20.times do
-#   Place.create(name: Faker::Address.community,
-#                description: Faker::Lorem.paragraphs(number: 1)[0],
-#                address: Faker::Address.full_address,
-#                image: "https://source.unsplash.com/#{rand(250..400)}x#{rand(250..400)}/?sunset",
-#                city: lisbon)
-# end
 
 d = Date.today
 10.times do
