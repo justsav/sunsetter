@@ -6,7 +6,7 @@
      <%= link_to booking_path(booking) do %>
      <%= image_tag(booking.place.image, class: "card-img-top upcoming-img") %>
      <div class="card-img-overlay upcoming-description">
-      <h5 class="card-title"><%= booking.name.split.map(&:capitalize).join(' ') %> @ <%= booking.place.name.split.map(&:capitalize).join(' ') %>
+      <h5 class="card-title bookings-card-title"><%= booking.name.split.map(&:capitalize).join(' ') %> @ <%= booking.place.name.split.map(&:capitalize).join(' ') %>
       </h5>
       <p class="card-text"><%= ApplicationHelper.convert_day(booking.date) %></p>
     </div>
