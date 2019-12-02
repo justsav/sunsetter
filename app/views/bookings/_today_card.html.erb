@@ -2,7 +2,8 @@
   <div class="container">
 
     <div class="card bg-dark text-white">
-      <%= link_to place_path(@booking_today.place.id, :date_session => @booking_today.date) do %>
+      <%= link_to booking_path(@booking_today.id, :date_session => @booking_today.date) do %>
+
       <%= image_tag(@booking_today.place.image, class: "card-img-top", id: "today-image") %>
       <div class="card-img-overlay upcoming-description">
         <h2 class="card-title"><%= @booking_today.name.split.map(&:capitalize).join(' ') %> at <%= @booking_today.place.name %></h2>
