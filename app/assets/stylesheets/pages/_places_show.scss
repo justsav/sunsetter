@@ -42,7 +42,7 @@
   width: 500px;
   max-height: 300px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 6px;
   position: relative;
   margin-top: 25px;
 }
@@ -61,4 +61,10 @@
   h1 {
   font-family: 'Calistoga';
   }
+}
+
+.marker {
+  width: 36px;
+  height: 51px;
+  cursor: pointer;
 }

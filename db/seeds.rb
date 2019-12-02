@@ -17,6 +17,7 @@ User.destroy_all
 Sunset.destroy_all
 Place.destroy_all
 City.destroy_all
+Booking.destroy_all
 
 lisbon = City.create(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
 WEATHER = [{description: 'clear',
@@ -82,7 +83,7 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
 
           { name: 'Alameda',
             image: 'https://media2.trover.com/T/547fe68bd809d85c0b00036e/fixedw_large_4x.jpg',
-            address: lisbon,
+            address: '38°44′12″N 9°08′02″W',
             city: lisbon,
             description: Faker::ChuckNorris.fact
 
@@ -152,3 +153,27 @@ d += 1
 end
 puts "Seeding Completed!"
 
+
+# Create User
+User.create(first_name: 'Joao',
+            email: 'joao@gmail.com',
+            password: 'password'
+            )
+
+# Create Booking
+d = Date.today
+d -= 2
+Booking.create(place: Place.where(name: 'Alameda')[0],
+               date: d,
+               name: 'Romantic Night',
+               user: User.first,
+               description: 'Lets celebrate our anniversary while watching the sunset.  I will bring champagne.'
+               )
+
+# Create Reviews
+Review.create(rating: 4,
+              booking: Booking.first,
+              user: User.first,
+              content: 'This was an excellent time! Loved this location.  Great drink specials nearby.',
+              image: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/09/90/5e/99.jpg'
+              )
