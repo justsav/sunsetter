@@ -51,11 +51,16 @@ class BookingsController < ApplicationController
     if params[:number].present?
       @send_message = SendMessage.new(@name, @date, @place, params[:number], @booking.id)
       @send_message.send
-      flash[:notice] = "Your message has been sent to #{params[:number]}"
+      sleep 3
+      # flash[:notice] = "Your invitation has been sent to #{params[:number]}"
+      # need error message
+      else
+        sleep 2
+
     end
+
+
   end
-
-
 
   def update
   end
