@@ -31,8 +31,7 @@
         <div class="row" style="justify-content: center">
           <div class="bookings-show-actions">
             <% if user_signed_in? %>
-            <button type="button" class="btn btn-success" style="margin-bottom: 10px">Share Plan via SMS</button>
-            <p><%= link_to 'Or Back to All Sunset Plans', bookings_path %></p>
+            <%= render 'modal' %>
             <% end %>
           </div>
         </div>

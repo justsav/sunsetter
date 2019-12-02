@@ -1,0 +1,24 @@
+<button type="button" class="btn btn-success" style="margin-bottom: 10px" data-toggle="modal" data-target="#messageModal">Share Plan via SMS</button>
+<p><%= link_to 'Or Back to All Sunset Plans', bookings_path %></p>
+
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="messageModalLabel">Please Enter Your Friend's Phone Number Below</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_tag booking_path(@booking) , method: :get do |f| %>
+          <%= number_field_tag 'number' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= submit_tag "Save Changes", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

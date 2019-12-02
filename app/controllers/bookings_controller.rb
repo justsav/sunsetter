@@ -6,8 +6,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all.where(user_id: current_user).order(date: :asc)
     @upcoming_bookings = @bookings.where('date > ?', Date.today)
     @booking_today = @bookings.where(date: Date.today)[0]
-
-
   end
 
   def new
@@ -30,23 +28,31 @@ class BookingsController < ApplicationController
    @booking.public = false
    @booking.user = current_user
 
-   if @booking.save!
-    session[:date] = nil
-    session[:place] = nil
-    redirect_to bookings_path
-    flash[:notice] = "You've booked a sunset at #{@booking.place.name} on #{@booking.date}"
-  else
-    redirect_to sunsets_path
-    flash[:notice] = "You already have a sunset booked for this date!"
+     if @booking.save!
+      session[:date] = nil
+      session[:place] = nil
+      redirect_to bookings_path
+      flash[:notice] = "You've booked a sunset at #{@booking.place.name} on #{@booking.date}"
+    else
+      redirect_to sunsets_path
+      flash[:notice] = "You already have a sunset booked for this date!"
+    end
   end
 
-  end
 
   def show
     @booking = Booking.find(params[:id])
+    @place = @booking.place.name
+    @name = @booking.user.first_name.capitalize
     @city = @booking.place.city
     @date = @booking.date
+    @booking_id = @booking.id
     @sunset = Sunset.where(date: @date, city: @city)[0]
+    if params[:number].present?
+      @send_message = SendMessage.new(@name, @date, @place, params[:number], @booking.id)
+      @send_message.send
+      flash[:notice] = "Your message has been sent to #{params[:number]}"
+    end
   end
 
 

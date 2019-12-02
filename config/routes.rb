@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'send_message_sms', to: 'bookings#send_message_sms'
+
   resources :cities, only: [:index] do
     resources :places, only: [:index]
   end
