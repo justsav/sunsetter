@@ -2,8 +2,8 @@
   <div class="sidebar">
     <div class="sidebar-icons">
       <%= image_tag('sunset.svg') %>
-      <%= image_tag('past.svg') %>
       <%= image_tag('future.svg') %>
+      <%= image_tag('past.svg') %>
     </div>
   </div>
   <div class="container">
@@ -12,6 +12,7 @@
         <div class="today-card-container">
           <div class="today-card-grid">
             <div class="header-container">
+              <%= image_tag('sunset.svg', class: 'header-image') %>
               <h2>Today's Sunset</h2>
             </div>
             <% if @booking_today %>
@@ -26,6 +27,7 @@
 
       <div class="upcoming-plans">
         <div class="header-container upcoming-header-container">
+          <%= image_tag('future.svg', class: 'header-image') %>
           <h1>Upcoming Sunset Plans</h1>
         </div>
         <div class="many-card-container">
@@ -38,6 +40,8 @@
           <% end %>
         </div>
       </div>
+
+
     </div>
   </div>
 </div>

@@ -113,4 +113,19 @@
   height: 100vh;
 }
 
+.header-image {
+  height: 36px;
+}
+
+.upcoming-plans {
+  height: 100vh;
+}
+
+.header-container img {
+
+
+          &:hover {
+            transform: scale(1.2);
+}
+}
 
