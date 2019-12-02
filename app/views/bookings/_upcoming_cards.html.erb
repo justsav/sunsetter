@@ -3,7 +3,7 @@
   <div class="booking-card-grid">
     <% @upcoming_bookings.each do |booking| %>
     <div class="card bg-dark text-white">
-     <%= link_to place_path(booking.place.id, :date_session => booking.date) do %>
+     <%= link_to booking_path(booking) do %>
      <%= image_tag(booking.place.image, class: "card-img-top upcoming-img") %>
      <div class="card-img-overlay upcoming-description">
       <h5 class="card-title"><%= booking.name.split.map(&:capitalize).join(' ') %> @ <%= booking.place.name.split.map(&:capitalize).join(' ') %>

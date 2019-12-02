@@ -10,6 +10,10 @@
 .bookings-new-container {
   margin: auto;
 }
+.bookings-show-container {
+  max-width: 600px;
+  margin: auto;
+}
 
 .bookings-new-card {
   display: flex;
@@ -20,6 +24,45 @@
   margin-bottom: 100px;
 }
 
+.bookings-show-card {
+  display: flex;
+  background: #f8f8f8;
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+  margin-top: 50px;
+  border-radius: 4px;
+  margin-bottom: 100px;
+  h1 {
+    font-family: 'Calistoga';
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.bookings-show-subhead {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.bookings-show-detail {
+  padding-right: 0;
+  padding: 20px;
+  img {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+  }
+}
+
+.bookings-show-actions {
+  text-align: center;
+  margin-bottom: 20px;
+  a {
+    text-decoration: none;
+    color: black;
+
+  }
+}
 
 .bookings-new-detail {
   padding-right: 0;

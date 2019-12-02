@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def self.convert_day(date)
-    date.strftime("%A, %e %b")
+    date.strftime("%A, %e %B")
   end
 end
 
