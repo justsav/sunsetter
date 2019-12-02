@@ -3,7 +3,6 @@
   display: flex;
   background-size: cover;
   background-position: center;
-  height: 100vh;
 }
 
 .booking-card-grid {
@@ -23,7 +22,6 @@
   h2 {
 
   padding-bottom: 10px;
-  // padding-top: 0px;
   font-family: 'Calistoga';
   font-weight: bold;
   font-size: 4em;
@@ -40,7 +38,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70vh;
   width: 90vw;
 
   margin-top: 154px;
@@ -107,5 +104,17 @@
   }
 }
 
+body {
+  height: 100%;
+}
+
+.today-card-grid .card-container {
+
+}
+
+.container-container .today-card-grid {
+  margin-top: 48px;
+  height: 100vh;
+}
 
 

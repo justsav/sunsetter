@@ -70,6 +70,8 @@
 
 .upcoming-img {
   object-fit: cover;
+  height: 200px;
+  width: 400px;
 }
 
 .upcoming-description {
@@ -77,9 +79,6 @@
 }
 
 .upcoming-cards-container {
-  width: 80vw;
+  // width: 80vw;
 }
 
-.today-card-grid .header-container {
-
-}
