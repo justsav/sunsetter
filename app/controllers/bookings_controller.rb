@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
 
   def index
     @user = current_user
@@ -43,6 +44,9 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @city = @booking.place.city
+    @date = @booking.date
+    @sunset = Sunset.where(date: @date, city: @city)[0]
   end
 
 
