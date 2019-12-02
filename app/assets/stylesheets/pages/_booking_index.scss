@@ -78,18 +78,34 @@
 }
 
 .sidebar {
-  height: 100vh;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+
   position: sticky;
   top: 50%;
   background: white;
   color: white;
-  padding: 20px;
+  width: 40px;
   text-align: center;
   padding-top: 40px;
+
 }
 
 .sidebar-icons {
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: sticky;
+  top: 10%;
+
+  img {
+    padding: 36px 0;
+    height: 100px;
+    width: 24px;
+  }
 }
+
 
 
