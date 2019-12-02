@@ -4,16 +4,17 @@
 
 .card-img-top {
   object-fit: cover;
+  width: max-content;
 }
 
 .today-booking-card {
   height: 342px;
-  width: 932px;
+
 }
 
 #today-image {
-  height: 100%;
-  height: -webkit-fill-available;
+  height: 400px;
+
 }
 
 .today-card-body {
@@ -77,4 +78,8 @@
 
 .upcoming-cards-container {
   width: 80vw;
+}
+
+.today-card-grid .header-container {
+
 }
