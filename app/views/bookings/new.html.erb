@@ -9,7 +9,7 @@
           <%= simple_form_for(@booking) do |f| %>
           <%= f.input :name, label: 'Name This Event:', placeholder: "My Cool Sunset" %>
           <%= f.input :description, as: :text, input_html: {rows: 3}, label: 'Event Description:', placeholder: "Let friends know more details about your event." %>
-          <%= f.submit 'Finish Plan', class: 'btn btn-dark' %>
+          <%= f.submit 'Finish Plan', class: 'btn btn-dark', id: 'finish-plan' %>
           <% end %>
         </div>
         <div class="bookings-new-sun col-5">
