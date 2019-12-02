@@ -3,35 +3,27 @@
     <h1>Choose a <%= @city.name %> Location for Your Sunset</h1>
   </div>
   <div class="places-body-container">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="places-grid">
-            <% @places.each do |place| %>
-            <div class="place-card">
-              <%= link_to place_path(place) do %>
-              <div class="card bg-dark text-white">
-                <img src=<%= place.image %> class='card-img'>
-                <div class = 'card-img-overlay' id="places-card-img-overlay">
-                  <h3 class="card-title"><%= place.name %></h3>
-                </div>
-              </div>
-              <% end %>
-            </div>
-            <% end %>
+    <div class="places-grid">
+      <% @places.each do |place| %>
+      <div class="place-card">
+        <%= link_to place_path(place) do %>
+        <div class="card bg-dark text-white">
+          <img src=<%= place.image %> class='card-img'>
+          <div class = 'card-img-overlay' id="places-card-img-overlay">
+            <h3 class="card-title"><%= place.name %></h3>
           </div>
         </div>
-        <div class="col">
-          <div class='map-container'
-            id='map'
-            style="width: 100%;
-            height: 600px;"
-            data-markers= "<%= @markers.to_json %>"
-            data-mapbox-api-key= "<%= ENV['MAPBOX_API']%>"
-            >
-          </div>
-        </div>
+        <% end %>
       </div>
+      <% end %>
+    </div>
+    <div class='map-container'
+      id='map'
+      style="width: 100%;
+      height: 600px;"
+      data-markers= "<%= @markers.to_json %>"
+      data-mapbox-api-key= "<%= ENV['MAPBOX_API']%>"
+      >
     </div>
   </div>
 </div>
