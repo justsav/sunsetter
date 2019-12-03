@@ -5,11 +5,40 @@
 
 #guest-image-list {
   list-style-type: none;
-  padding: 0 3px;
-
+  padding: 0 5px;
 };
 
 #guest-image-ul {
   display: flex;
-  padding-left: 0
+  padding-left: 0;
+  margin-top: 20px;
+
+}
+
+.tooltip-wrap {
+  position: relative;
+}
+.tooltip-wrap .tooltip-content {
+  display: none;
+   top: 100%;
+   left: 50%;
+   margin-left: -14px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+   background-color: #7CD1F9;
+   color: #fff;
+   text-align: center;
+   padding: 5px 2px 0px 2px;
+   border-radius: 6px;
+   text-align: center;
+   font-size: .9em;
+  height: 30px;
+}
+.tooltip-wrap:hover .tooltip-content {
+  display: block;
+  position: absolute;
+}
+
+#attending-header {
+  font-weight: bold;
+  padding-right: 10px;
 }

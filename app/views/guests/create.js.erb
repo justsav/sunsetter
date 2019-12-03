@@ -1,0 +1,22 @@
+
+function refreshForm(innerHTML) {
+  const newGuestform = document.getElementById('new_guest') ;
+  newGuestform.innerHTML = innerHTML;
+}
+
+
+function addGuest(guestHTML) {
+  const guests = document.getElementById('guest-image-ul');
+  guests.insertAdjacentHTML('beforeend', guestHTML);
+}
+
+
+
+
+<% if @guest.errors.any? %>
+  refreshForm('<%= j render "bookings/new_guest_form", booking: @booking, guest: @guest %>');
+<% else %>
+  addGuest('<li id="guest-image-list"><%= image_tag(@guest.image, class: "guest-image") %></li>');
+  refreshForm('<%= j render "bookings/new_guest_form", booking: @booking, guest: Guest.new %>');
+  document.querySelector("[data-dismiss=modal]").click();
+<% end %>

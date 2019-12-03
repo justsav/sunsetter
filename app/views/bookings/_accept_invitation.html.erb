@@ -10,13 +10,8 @@
         <h5 class="modal-title" id="messageModalLabel">Please Input A Phone Number</h5>
       </div>
       <div class="modal-body">
-       <%= simple_form_for [@booking, @guest] do |f| %>
-        <%= f.input :name %>
-      </div>
-      <div class="footer">
-        <%= f.submit 'Confirm', class: 'btn send-button' %>
-        <% end %>
-      </div>
+        <%= render 'new_guest_form', booking: booking, guest: guest %>
+        <button type="button" class="btn btn-secondary" style="display: none" data-dismiss="modal">Close</button>
     </div>
   </div>
 </div>

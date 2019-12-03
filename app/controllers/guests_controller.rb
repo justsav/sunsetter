@@ -12,10 +12,15 @@ class GuestsController < ApplicationController
     # how to get from asset pipeline?
     @guest.image = 'https://image.flaticon.com/icons/svg/1940/1940935.svg'
     if @guest.save!
-      # change redirects
-      redirect_to booking_path(@booking)
+      respond_to do |format|
+        format.html { redirect_to booking_path(@booking) }
+        format.js # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      redirect_to root_path
+      respond_to do |format|
+        format.html { render 'bookings/show' }
+        format.js # <-- idem
+      end
     end
   end
 
@@ -25,3 +30,4 @@ class GuestsController < ApplicationController
     params.require(:guest).permit(:name)
   end
 end
+# start
