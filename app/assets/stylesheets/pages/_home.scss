@@ -24,6 +24,9 @@
   background-position: center;
   max-width: -webkit-fill-available;
   background-color: black;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
 }
 
 .landing-container {
