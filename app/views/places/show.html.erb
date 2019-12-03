@@ -1,6 +1,11 @@
 <div class="places-show-bg">
+  <% if @place.reviews.present? %>
+    <%= render 'carousel' %>
+  <% end %>
   <div class="places-show-container">
+    <div class="places-show-staticimg">
     <%= image_tag(@place.image, style: 'box-shadow: 1px 1px 5px black') %>
+    </div>
     <div class="places-detail-card">
       <div class="container">
         <div class="row">
@@ -34,15 +39,26 @@
         <div class="row">
           <div class="place-review col-12">
             <% @place.reviews.each do |review| %>
-            <li>
-              <div class="star-rating">
+        <div class="review-card">
+          <%= image_tag(review.image) %>
+          <div class="container">
+            <div class="row">
+              <div class="review-card-title col-12">
+                <h2><%= review.user.first_name %>:</h2>
+                <div class="star-rating">
                 <% review.rating.times do%>
                   <i class="fas fa-star"></i>
                 <% end %>
+                </div>
               </div>
-            <%= review.rating %> - <%= review.content %>
-              <%= cl_image_tag review.image, height: 300, width: 400, crop: :fill %>
-            </li>
+            </div>
+            <div class="row">
+              <div class="review-card-info col-12">
+              <p>"<%= review.content %>"</p>
+            </div>
+            </div>
+          </div>
+        </div>
             <% end %>
           </div>
         </div>
