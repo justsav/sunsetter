@@ -10,6 +10,14 @@
         <div class="row">
           <div class="bookings-show-subhead">
             <h3><%= ApplicationHelper.convert_day(@booking.date) %> at <%= @booking.place.name %></h3>
+            <% if @booking.guests %>
+              <ul id="guest-image-ul">
+              <% @booking.guests.each do |guest| %>
+                <li id="guest-image-list"><%= image_tag(guest.image, class: 'guest-image') %></li>
+              <% end %>
+              </ul>
+            <% end %>
+           <!--  <%= image_tag(@booking.user.image) %> -->
           </div>
         </div>
         <div class="row">
@@ -30,8 +38,10 @@
         </div>
         <div class="row" style="justify-content: center">
           <div class="bookings-show-actions">
-            <% if user_signed_in? %>
+            <% if current_user == @booking.user%>
               <%= render 'modal' %>
+            <% else %>
+              <%= render 'accept_invitation' %>
             <% end %>
           </div>
         </div>
