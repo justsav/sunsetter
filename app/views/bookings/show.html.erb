@@ -12,12 +12,17 @@
             <h3><%= ApplicationHelper.convert_day(@booking.date) %> at <%= @booking.place.name %></h3>
             <% if @booking.guests %>
               <ul id="guest-image-ul">
+              <h5 id="attending-header">Attending:</h5>
               <% @booking.guests.each do |guest| %>
-                <li id="guest-image-list"><%= image_tag(guest.image, class: 'guest-image') %></li>
+              <div class="tooltip-wrap">
+                  <li id="guest-image-list"><%= image_tag(guest.image, class: 'guest-image') %></li>
+                  <div class="tooltip-content">
+                  <p><%= guest.name %></p>
+                </div>
+              </div>
               <% end %>
               </ul>
             <% end %>
-           <!--  <%= image_tag(@booking.user.image) %> -->
           </div>
         </div>
         <div class="row">
@@ -41,7 +46,7 @@
             <% if current_user == @booking.user%>
               <%= render 'modal' %>
             <% else %>
-              <%= render 'accept_invitation' %>
+              <%= render 'accept_invitation', booking: @booking, guest: @guest %>
             <% end %>
           </div>
         </div>
