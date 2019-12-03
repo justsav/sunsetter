@@ -18,6 +18,7 @@ class SendMessage
        from: '+13074595063',
        to: '+' + @number
      )
+  rescue Twilio::REST::TwilioError => e
+    puts e.message
   end
 end
-
