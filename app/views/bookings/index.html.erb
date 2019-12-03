@@ -1,18 +1,19 @@
 <div class='bookings-index-bg'>
   <div class="sidebar">
     <div class="sidebar-icons">
-      <%= image_tag('sunset.svg') %>
-      <%= image_tag('future.svg') %>
-      <%= image_tag('past.svg') %>
+      <a href="#today-header"><%= image_tag('sunset.svg') %></a>
+      <a href="#future-header"><%= image_tag('future.svg') %></a>
+      <a href="#past-header"><%= image_tag('past.svg') %></a>
     </div>
   </div>
   <div class="container">
     <div class="booking-body-container">
       <div class="container-container">
-        <div class="today-card-container">
+        <div class="today-card-container scrolling-box">
           <div class="today-card-grid">
             <div class="header-container">
-              <%= image_tag('sunset.svg', class: 'header-image') %>
+              <div id="today-header"></div>
+              <%= image_tag('sunset.svg', class: 'header-image', ) %>
               <h2>Today's Sunset</h2>
             </div>
             <% if @booking_today %>
@@ -24,8 +25,8 @@
           </div>
         </div>
       </div>
-
-      <div class="upcoming-plans">
+      <div id="future-header"></div>
+      <div class="upcoming-plans scrolling-box">
         <div class="header-container upcoming-header-container">
           <%= image_tag('future.svg', class: 'header-image') %>
           <h1>Upcoming Sunset Plans</h1>
@@ -37,6 +38,23 @@
           </div>
           <% else %>
           <p class="no-upcoming-sunsets">You don't have any upcoming sunsets planned... Would you like to add one?</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="past-header"></div>
+      <div class="upcoming-plans scrolling-box">
+        <div class="header-container upcoming-header-container">
+          <%= image_tag('past.svg', class: 'header-image') %>
+          <h1>Past Sunset Plans</h1>
+        </div>
+        <div class="many-card-container">
+          <div class="upcoming-cards-container">
+            <% unless @past_bookings.empty?%>
+            <%= render 'upcoming_cards' %>
+          </div>
+          <% else %>
+          <p class="no-upcoming-sunsets">You haven't been to a sunset with us yet 😞</p>
           <% end %>
         </div>
       </div>

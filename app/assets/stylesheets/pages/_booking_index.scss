@@ -110,7 +110,7 @@
 
 .container-container .today-card-grid {
   margin-top: 48px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .header-image {
@@ -118,7 +118,7 @@
 }
 
 .upcoming-plans {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .header-container img {
@@ -127,5 +127,18 @@
           &:hover {
             transform: scale(1.2);
 }
+}
+
+
+#today-header {
+  margin-bottom: 40px;
+}
+
+#past-header {
+  margin-bottom: 40px;
+}
+
+#future-header {
+  margin-bottom: 40px;
 }
 

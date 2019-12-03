@@ -2,6 +2,10 @@ body {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
