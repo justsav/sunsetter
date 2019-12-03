@@ -1,15 +1,34 @@
 // Specific CSS for your home-page
 .landing-bg {
-  background-image: asset-url('home_bg.png');
+  // background-image: asset-url('sunsetter_white.png');
+  // background-repeat: no-repeat;
+  // z-index: 0;
+  // height: 100vh;
+}
+
+.landing-overlap {
+  background-image: asset-url('sunsetter_white.png');
+  background-repeat: no-repeat;
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  background-size: contain;
+  @media only screen and (min-width: 482px) {
+  }
+}
+
+#videoBG {
+  position:fixed;
+  z-index: -1;
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  background-color: white;
+  max-width: -webkit-fill-available;
+  background-color: black;
 }
 
 .landing-container {
-  margin-left: 100px;
-  width: 380px;
+  margin-left: 25px;
+  width: 450px;
 }
 
 .landing-title {
@@ -17,16 +36,22 @@
   h1 {
   font-family: 'Calistoga';
   font-size: 80px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+  text-align: center;
   }
 }
 
 .landing-subtitle {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  h3 {
+    font-size: 22px;
+    text-align: center;
+  }
 }
 
 .landing-city-input {
   // width: 200px;
+  margin-left: 45px;
   // margin-top: 30px;
   // margin-bottom: 15px;
 }

@@ -4,7 +4,9 @@
   <% end %>
   <div class="places-show-container">
     <div class="places-show-staticimg">
+  <% if @place.reviews.empty? %>
     <%= image_tag(@place.image, style: 'box-shadow: 1px 1px 5px black') %>
+  <% end %>
     </div>
     <div class="places-detail-card">
       <div class="container">
