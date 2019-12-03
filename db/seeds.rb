@@ -159,6 +159,10 @@ User.create(first_name: 'Joao',
             email: 'joao@gmail.com',
             password: 'password'
             )
+User.create(first_name: 'Emily',
+            email: 'andre@gmail.com',
+            password: 'password'
+            )
 
 # Create Booking
 d = Date.today
@@ -176,4 +180,10 @@ Review.create(rating: 4,
               user: User.first,
               content: 'This was an excellent time! Loved this location.  Great drink specials nearby.',
               image: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/09/90/5e/99.jpg'
+              )
+Review.create(rating: 5,
+              booking: Booking.first,
+              user: User.last,
+              content: 'Ive been coming here for a long time.  Would sunset here again, for sure.',
+              image: 'https://i.pinimg.com/originals/51/71/97/51719735d5b52a87892f9936b3c3429b.jpg'
               )
