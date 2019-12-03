@@ -1,6 +1,11 @@
 <div class="places-show-bg">
+  <% if @place.reviews.present? %>
+    <%= render 'carousel' %>
+  <% end %>
   <div class="places-show-container">
+    <div class="places-show-staticimg">
     <%= image_tag(@place.image, style: 'box-shadow: 1px 1px 5px black') %>
+    </div>
     <div class="places-detail-card">
       <div class="container">
         <div class="row">
@@ -34,7 +39,6 @@
         <div class="row">
           <div class="place-review col-12">
             <% @place.reviews.each do |review| %>
-
         <div class="review-card">
           <%= image_tag(review.image) %>
           <div class="container">

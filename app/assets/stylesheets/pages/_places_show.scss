@@ -38,6 +38,12 @@
   margin-bottom: 25px;
 }
 
+.places-show-staticimg {
+  @media only screen and (min-width: 990px) {
+    display:none;
+  }
+}
+
 .places-show-container img {
   width: 500px;
   max-height: 300px;
@@ -90,6 +96,9 @@
     max-width: 200px;
     margin-top: 0px;
     object-fit: cover;
+    @media only screen and (max-width: 990px) {
+    display:none;
+  }
   }
 }
 
