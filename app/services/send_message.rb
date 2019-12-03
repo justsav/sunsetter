@@ -14,7 +14,7 @@ class SendMessage
 
     message = @client.messages
     .create(
-       body: "Your friend, #{@name} invited you to watch the sunset at #{@location} on #{ApplicationHelper.convert_day(@date)}. Take a look at http://www.sunsetter.site/bookings/#{@booking_id}?date_session=#{@date}",
+       body: "#{@name} invited you to watch the sunset at #{@location} on #{ApplicationHelper.convert_day(@date)}. Take a look at http://www.sunsetter.site/bookings/#{@booking_id}?date_session=#{@date}",
        from: '+13074595063',
        to: '+' + @number
      )
