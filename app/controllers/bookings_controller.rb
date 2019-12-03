@@ -56,10 +56,8 @@ class BookingsController < ApplicationController
       # need error message
       else
         sleep 2
-
     end
-
-
+    @guest = Guest.new
   end
 
   def update
