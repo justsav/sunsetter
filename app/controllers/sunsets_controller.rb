@@ -3,6 +3,11 @@ class SunsetsController < ApplicationController
   layout 'sunset'
 
   def index
+    user_city = params[:city]
+    if City.find_by(name: user_city).nil?
+      redirect_to root_path
+      flash[:notice] = "Sorry, we don't have any information for #{user_city} yet."
+    end
     @sunsets = Sunset.all
     store_city
 
