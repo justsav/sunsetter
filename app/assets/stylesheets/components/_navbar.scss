@@ -3,6 +3,10 @@
   align-items: center;
   background: white;
 
+  img {
+    height: 33px;
+    margin-left: 15px;
+  }
 
   h6 {
     margin: 0;
@@ -19,7 +23,6 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
 
 .fixed-top {
@@ -76,4 +79,36 @@ a {
 
 .sign-in-icons {
   display: flex;
+  i {
+  color: #f3913e;
+  }
+}
+
+.dropdown-item {
+  color: #f3913e;
+  // text-align: left;
+  span {
+    font-family: sans-serif;
+    margin-bottom: 5px;
+  }
+}
+
+.dropdown-toggle {
+  color: #f3913e;
+  span {
+    font-family: sans-serif;
+  }
+}
+
+.nav-link span {
+  font-family: sans-serif;
+}
+
+.nav-item {
+}
+
+.dropdown-menu a {
+  text-align: right;
+  margin-right: 0px;
+  padding-right: 0px;
 }

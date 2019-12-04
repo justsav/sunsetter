@@ -14,28 +14,34 @@
   margin-top: 42px;
 }
 
-.place-description {
+.place-show-label {
+  margin-left: 20px;
+  width: 170px;
   h5 {
-    font-size: 15px;
-    font-weight: bolder;
-    text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
   }
 }
 
-.place-address {
-  h5 {
-    font-size: 15px;
-    font-weight: bolder;
-    text-transform: uppercase;
+.place-show-description {
+  margin-right: 15px;
+  max-width: 145vh;
+  text-align: left;
+}
+
+
+.place-show-actions {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  margin-right: 100px;
+  margin-left: 100px;
+  a {
+    border-radius: 6px;
   }
-}
-
-.place-positive {
-  margin-top: 20px;
-}
-
-.place-negative {
-  margin-bottom: 25px;
 }
 
 .places-show-staticimg {
@@ -64,6 +70,7 @@
 
 .place-title {
   margin-top: 50px;
+  margin-bottom: 15px;
   h1 {
   font-family: 'Calistoga';
   }
