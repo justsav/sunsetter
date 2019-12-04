@@ -1,5 +1,6 @@
 class SunsetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+  layout 'sunset'
 
   def index
     @sunsets = Sunset.all
