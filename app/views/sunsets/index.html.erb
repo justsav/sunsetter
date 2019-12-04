@@ -1,36 +1,33 @@
-
 <div class="sunset-bg">
   <div class="sunset-choose-title">
     <h3>Choose the Best Day for a <%= @city.name %> Sunset:</h3>
   </div>
   <div class="sunset-container">
     <% @sunsets.each do |sunset| %>
-      <%= link_to city_places_path(sunset.city, :date_session => sunset.date, :class => 'btn btn-primary') do %>
-
-        <div class="sunset-card">
-          <%= image_tag("#{sunset.icon}") %>
-          <div class="container">
-            <div class="row">
-              <div class="sunset-card-title col-12">
-                <h2><%= sunset.date == Date.today ? 'Today' : ApplicationHelper.convert_day(sunset.date) %></h2>
-              </div>
-            </div>
-
-            <div class="sunset-card-info row">
-              <div class="sunset-card-sunset col-6">
-                <p>Golden Hour - <%= ApplicationHelper.converted_time(sunset.gold_start) %></p>
-                <p>Sunset Begin - <%= ApplicationHelper.converted_time(sunset.start) %></p>
-                <p>Sunset Actual - <%= ApplicationHelper.converted_time(sunset.end) %></p>
-              </div>
-              <div class="sunset-card-weather col-6">
-                <p>Weather: <%= sunset.description.capitalize %></p>
-                <p>Temp Range: <%= sunset.tempmin %>-<%= sunset.tempmax %>F</p>
-                <p></p>
-              </div>
-            </div>
+    <%= link_to city_places_path(sunset.city, :date_session => sunset.date, :class => 'btn btn-primary') do %>
+    <div class="sunset-card">
+      <%= image_tag("#{sunset.icon}") %>
+      <div class="container">
+        <div class="row">
+          <div class="sunset-card-title col-12">
+            <h2><%= sunset.date == Date.today ? 'Today' : ApplicationHelper.convert_day(sunset.date) %></h2>
           </div>
         </div>
-      <% end %>
+        <div class="sunset-card-info row">
+          <div class="sunset-card-sunset col-6">
+            <p>Golden Hour - <%= ApplicationHelper.converted_time(sunset.gold_start) %></p>
+            <p>Sunset Begin - <%= ApplicationHelper.converted_time(sunset.start) %></p>
+            <p>Sunset Actual - <%= ApplicationHelper.converted_time(sunset.end) %></p>
+          </div>
+          <div class="sunset-card-weather col-6">
+            <p>Weather: <%= sunset.description.capitalize %></p>
+            <p>Temp Range: <%= sunset.tempmin %>-<%= sunset.tempmax %>F</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
     <% end %>
   </div>
 </div>

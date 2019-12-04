@@ -25,6 +25,7 @@
 .fixed-top {
   opacity: 1;
   background: white;
+  z-index: 2000000;
 }
 
 .fixed-top.scrolled {
