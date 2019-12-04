@@ -38,23 +38,21 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
             image: 'https://img.theculturetrip.com/768x432/wp-content/uploads/2017/03/shutterstock_603926126-ttstudio.jpg',
             address: 'Largo Santa Luzia, Lisbon',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
+            description: 'This popular observation deck with a pergola offers dramatic views of Lisbon & the Tagus River.  This romantic terrace by the church of Santa Luzia introduces visitors to Alfama with a sweeping view over its houses, churches, and the Tagus River. On an outside wall of the church are two tile panels, one of Comercio Square before the earthquake, and another showing Christians attacking St. Georges Castle in 1147. The café on the terrace is a good place for a drink before climbing to the castle nearby.'
           },
 
           { name: 'Cais das Colunas',
             image: 'https://voss-photography.com/wp-content/uploads/2017/11/lissabon-cais-das-colunas-sonnenuntergang.jpg?7f1c30',
             address: 'Cais das Colunas',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
-
+            description: 'Its by Commerce Square, on the Quay of the Columns, which tourists are most often surprised by the colors of the Lisbon sky at dusk, especially in the fall. It is next to Praça do Comércio, in Cais das Colunas, that tourists are most surprised by the colors of the Lisbon sky at dusk, especially in the fall.'
           },
 
           { name: 'Miradouro da Senhora do Monte',
             image: 'https://sumfinity.com/wp-content/uploads/2019/02/Sunset-View-Lisbon-Portugal-evening.jpg',
             address: 'Largo Monte, Lisbon',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
-
+            description: 'Perched upon a hillside in the Graca neighbourhood, Miradouro da Senhora do Monte, (Our Lady of the Hill), looks out over Lisbon and is the city's highest lookout point or miradouro. With such a position it means it offers uninterrupted 250 degree panoramic views across Lisbon from the stunning old quarters and castle to the downtown district of the city and beyond; it's a perfect opportunity to get some amazing photographs of the landscape and city as well as the Tagus River estuary and the Castle of Saint George.'
           },
 
           { name: 'Hotel Mundial',
@@ -69,16 +67,14 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
             image: "https://i2.wp.com/infocul.pt/wp-content/uploads/2017/04/Amoreiras-360%C3%82%C2%BA-Panoramic-View-Dia-Internacional-dos-Monumentos-e-S%C3%83%C2%ADtios.jpg?resize=800%2C534",
             address: 'Amoreiras Shopping Center, Av. Eng. Duarte Pacheco 1070',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
-
+            description: 'Lisbons highest viewpoint is waiting for you with a unique view over the portuguese capital and its most iconic landmarks. An exceptional experience on the top of the Amoreiras Shopping Center which is in itself one of the highlights of the citys landscape and shopping experience. Open everyday.'
           },
 
           { name: 'Miradouro do Monte Agudo',
             image:'https://i1.wp.com/boasnoticias.pt/wp-content/uploads/2016/11/monte1.jpg?fit=666%2C333&ssl=1',
             address: 'Miradouro do Monte Agudo',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
-
+            description: 'Imagine a forest park with a simple terrace. Imagine also a space where there is peace and a fantastic view of Lisbon… another option is to stop imagining, escape the urban movement and climb to Monte Agudo, a perfect viewpoint for a day spent well. The Monte Agudo viewpoint is a modest place, embraced by nature where there is a permanent invitation for a city escape. Whether it is a relaxed afternoon or evening with friends or simply alone, the viewpoint is ideal for any occasion when you want a panoramic view of the city of the seven hills. The Monte Agudo viewpoint is a cool place to be at dusk.'
           },
 
           { name: 'Alameda',
