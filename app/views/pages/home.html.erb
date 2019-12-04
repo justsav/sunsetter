@@ -1,7 +1,8 @@
 <div class="landing-bg">
-<video id="videoBG" poster="assets/poster.jpg" autoplay muted loop>
-  <source src="assets/footage1.mp4" type="video/mp4">
-</video>
+<div id="videoBG" autoplay muted loop>
+  <%= video_tag('romantic-sunset.mp4', autoplay: :autoplay, loop: :loop, muted: 'muted', poster: 'romantic-sunset.jpg', id: 'videoBG') %>
+  <!-- <source src="assets/footage1.mp4" type="video/mp4"> -->
+</div>
   <div class="landing-overlap">
   <div class="landing-container">
     <div class="container search-container">
@@ -9,7 +10,7 @@
         <h1 style="font-family: Calistoga">Sunsetter</h1>
       </div>
       <div class="landing-subtitle">
-        <h3>The sun sets once in a day-</h3>
+        <h3>The sun sets once a day-</h3>
         <h3>make the most of the moment.</h3>
       </div>
       <div class="row">
