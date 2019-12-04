@@ -7,12 +7,12 @@
 
 .booking-card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
 
 .card-container {
-  margin: 70px;
+  margin: 24px 70px 70px 70px;
 }
 
 
@@ -21,10 +21,11 @@
 
   h2 {
 
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
   font-family: 'Calistoga';
   font-weight: bold;
   font-size: 4em;
+  margin-bottom: 0;
 }
 }
 
@@ -42,10 +43,6 @@
 
   margin-top: 154px;
   margin-bottom: 142px;
-}
-
-.container-container {
-  margin-top: 30px;
 }
 
 .many-card-container {
@@ -142,3 +139,7 @@
   margin-bottom: 40px;
 }
 
+#today-image,
+.upcoming-img {
+  opacity: .8;
+}
