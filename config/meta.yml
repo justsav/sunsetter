@@ -1,0 +1,5 @@
+meta_product_name: "Sunsetter"
+meta_title: "Sunsetter - Share The Moment"
+meta_description: "The sun sets once in a day - make the most of the moment."
+meta_image: "poster.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
