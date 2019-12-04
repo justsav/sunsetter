@@ -10,7 +10,7 @@
         <div class="row">
           <div class="bookings-show-subhead">
             <h3><%= ApplicationHelper.convert_day(@booking.date) %> at <%= @booking.place.name %></h3>
-            <% if @booking.guests %>
+            <% if @booking.guests.any? %>
               <ul id="guest-image-ul">
               <h5 id="attending-header">Attending:</h5>
               <% @booking.guests.each do |guest| %>
