@@ -1,4 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+  <%= link_to root_path do %>
+      <img src="<%= '../../assets/logo2.svg' %>">
+  <% end %>
 
   <button class="navbar-toggler icon" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon icon nav-link"></span>
@@ -10,25 +13,33 @@
       <div class="sign-in-icons">
         <li>
           <% if user_signed_in? %>
-          <%= link_to bookings_path, class: "icon nav-link" do %>
-          <i class="fas fa-sun"></i>
+            <%= link_to sunsets_path(city: 'Lisbon'), class: "icon nav-link", style: "margin-right: 10px" do %>
+            <i class="fas fa-sun"> <span>Create Plan</span></i>
+        </li>
           <% end %>
         </li>
 
-        <li>
-          <%= link_to destroy_user_session_path, method: :delete, class: "icon nav-link" do %>
-            <i class="fas fa-sign-out-alt"></i>
+      <li class="nav-item dropdown">
+          <i class="dropdown-toggle fas fa-user icon" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span> <%= current_user.first_name %></span></i>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to bookings_path do %>
+            <i class="dropdown-item fas fa-sun"><span> My Sunset Plans</span></i>
           <% end %>
-        </li>
+          <%= link_to destroy_user_session_path, method: :delete, class: "icon nav-link" do %>
+            <i class="dropdown-item fas fa-sign-out-alt"><span> Logout</span></i>
+          <% end %>
+        </div>
+      </li>
+
       </div>
 
-      <% else %>
+          <% else %>
 
       <li class="nav-item">
-       <h6> <%= link_to new_user_session_path, class: "icon nav-link" do %> </h6>
-       <i class="fas fa-user icon"></i>
+        <h6> <%= link_to new_user_session_path, class: "icon nav-link" do %> </h6>
+        <i class="fas fa-user icon"> Sign In or Join</i>
      </li>
-     <% end %>
+        <% end %>
 
      <% end %>
    </ul>
