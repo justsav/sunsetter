@@ -50,7 +50,7 @@ class BookingsController < ApplicationController
     # @booking_id = @booking.id
     @sunset = Sunset.where(date: @date, city: @city)[0]
     # @number = params[:number]
-    if params[:nr]
+
       # raise
       # @send_message = SendMessage.new(@name, @date, @place, @number, @booking.id)
       # @send_message.send
@@ -59,8 +59,8 @@ class BookingsController < ApplicationController
 
       # sleep 3
 
-      flash[:notice] = "Your invitation has been sent to #{params[:nr]}"
-    end
+
+
     #params[:number] = nil
 
     @guest = Guest.new
@@ -78,6 +78,7 @@ class BookingsController < ApplicationController
     @send_message.send
 
     redirect_to booking_path(@booking, nr: @number)
+    flash[:notice] = "Your invitation has been sent to #{@number}"
     # @send_message.number = ''
   end
 
