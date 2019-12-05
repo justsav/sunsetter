@@ -182,7 +182,7 @@ User.create(first_name: 'Emily',
 # Create Booking
 d = Date.today
 d -= 2
-Booking.create(place: Place.where(name: 'Alameda')[0],
+Booking.create(place: Place.where(name: 'Lost In Esplanada Bar')[0],
                date: d,
                name: 'Beers at Sunset',
                user: User.first,
