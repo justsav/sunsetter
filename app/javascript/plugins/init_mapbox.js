@@ -18,7 +18,7 @@ const initMapbox = () => {
   // Create a HTML element for your custom marker
   const element = document.createElement('div');
   element.className = 'marker';
-  element.style.backgroundImage = `url('../../assets/sunsetmarker.svg')`;
+  element.style.backgroundImage = `url('https://res.cloudinary.com/justsav/image/upload/v1575539164/sunsetmarker_hjqd9z.svg')`;
   element.style.backgroundSize = 'contain';
   element.style.marginTop = '-25px';
 
