@@ -39,18 +39,28 @@
 }
 
 .bookings-show-subhead {
+  margin-top: 10px;
   padding-left: 30px;
-  padding-right: 30px;
   width: 100%;
+  margin-bottom: 15px;
+  p {
+    line-height: 1.3em;
+    margin-bottom: 4px;
+  span {
+    font-weight: bolder;
+  }
+  }
   h3 {
     text-align: center;
+    font-family: sans-serif;
+    line-height: .8em;
   }
 }
 
 .bookings-show-detail {
-  padding-right: 0;
-  padding: 20px;
+  padding-top: 20px;
   img {
+    margin-left: 15px;
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
@@ -58,9 +68,16 @@
   }
 }
 
+.booking-action-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .bookings-show-actions {
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 25px;
   a {
     text-decoration: none;
     color: black;
@@ -96,8 +113,22 @@
     margin-bottom: 0px;
   }
 
+}
+
 .bookings-new-sunset-details {
   margin-top: 10px;
 }
 
+.bookings-show-sunset-detail {
+  padding-top: 20px;
+  padding-right: 20px;
+  line-height: .7em;
+  text-align: center;
+  h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  p {
+
+  }
 }

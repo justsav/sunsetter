@@ -17,6 +17,7 @@
 .place-label-column {
   min-width: 180px;
   margin-left: 15px;
+  align-items: center;
 }
 
 .place-show-label {
@@ -32,6 +33,7 @@
   margin-right: 30px;
   max-width: 145vh;
   text-align: left;
+  align-items: center;
 }
 
 
@@ -45,7 +47,13 @@
   margin-right: 100px;
   margin-left: 100px;
   a {
+    padding: 10px;
     border-radius: 6px;
+  }
+
+  @media only screen and (max-width: 768px) {
+  margin-right: 50px;
+  margin-left: 50px;
   }
 }
 
