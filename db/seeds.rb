@@ -37,23 +37,42 @@ WEATHER = [{description: 'Clear',
              icon: 'http://openweathermap.org/img/wn/10d@2x.png'
           }]
 
+# TODAY AND FUTURE SUNSETS
 d = Date.today
 m = 14
 10.times do
   weather_arr = WEATHER.sample
   Sunset.create(city: lisbon,
                 start: "5:#{m.round}pm",
-                end: "5:#{m+3}pm",
-                gold_start: "4:#{m+22}pm",
+                end: "5:#{m.round + 3}pm",
+                gold_start: "4:#{m.round + 22}pm",
                 date: d,
                 description: weather_arr[:description],
                 icon: weather_arr[:icon],
                 tempmin: "#{rand(9..13)}°C",
                 tempmax: "#{rand(15..18)}°C"
                 )
-  m += 0.33
+  m += 0.3
   d += 1
 end
+
+# PAST SUNSET
+
+d = Date.today
+d -= 5
+weather_arr = WEATHER.sample
+Sunset.create(city: lisbon,
+              start: "5:#{m.round}pm",
+              end: "5:#{m.round + 3}pm",
+              gold_start: "4:#{m.round + 22}pm",
+              date: d,
+              description: weather_arr[:description],
+              icon: weather_arr[:icon],
+              tempmin: "#{rand(9..13)}°C",
+              tempmax: "#{rand(15..18)}°C"
+              )
+
+# PLACES SEED
 
 PLACES = [{ name: 'Miradouro Santa Luzia',
             image: 'https://img.theculturetrip.com/768x432/wp-content/uploads/2017/03/shutterstock_603926126-ttstudio.jpg',
@@ -122,7 +141,7 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
 
           },
 
-          { name:'Lost in Esplanada Bar',
+          { name:'Lost In Esplanada Bar',
             image:'https://media-cdn.tripadvisor.com/media/photo-s/11/37/ef/f9/terraco-coberto-panoramico.jpg',
             address: 'R. Dom Pedro V 56B, 1250-094 Lisboa',
             city: lisbon,
@@ -147,6 +166,10 @@ Place.create(name: 'Park Bar',
            city: lisbon)
 
 # Create User
+User.create(first_name: 'Nick',
+            email: 'n.galluzzo@gmail.com',
+            password: 'password'
+            )
 User.create(first_name: 'Joao',
             email: 'joao@gmail.com',
             password: 'password'
@@ -161,9 +184,35 @@ d = Date.today
 d -= 2
 Booking.create(place: Place.where(name: 'Alameda')[0],
                date: d,
-               name: 'Romantic Night',
+               name: 'Beers at Sunset',
                user: User.first,
+               description: 'I want to get everyone together from Le Wagon for one last epic rager.  Might get a little cold after the sun goes down, so bring a jacket.'
+               )
+Booking.create(place: Place.where(name: 'Alameda')[0],
+               date: d,
+               name: 'Romantic Night',
+               user: User.find_by(first_name: 'Joao'),
                description: 'Lets celebrate our anniversary while watching the sunset.  I will bring champagne.'
+               )
+Booking.create(place: Place.where(name: 'Miradouro do Monte Agudo')[0],
+               date: Date.today,
+               name: 'Work Anniversary Party',
+               user: User.find_by(first_name: 'Emily'),
+               description: 'Celebrating 2 years at Le Wagon!  Heres to at least 2 more!'
+               )
+d = (Date.today + 3)
+Booking.create(place: Place.where(name: 'Hotel Mundial')[0],
+               date: d,
+               name: 'Ruby Meetup at Sunset',
+               user: User.first,
+               description: 'Drinkathon and hackathon, all Ruby, all night, starting at sunset.'
+               )
+d = (Date.today + 5)
+Booking.create(place: Place.where(name: 'Lost In Esplanada Bar')[0],
+               date: d,
+               name: 'Graduation from Le Wagon',
+               user: User.first,
+               description: 'Want to wish everyone a great job on 9 weeks of hard work.  We should be proud so lets celebrate with a sunset.'
                )
 
 # Create Reviews
@@ -177,7 +226,7 @@ Review.create(rating: 5,
               booking: Booking.first,
               user: User.last,
               content: 'Ive been coming here for a long time.  Would sunset here again, for sure.',
-              image: 'https://i.pinimg.com/originals/51/71/97/51719735d5b52a87892f9936b3c3429b.jpg'
+              image: 'https://www.viva-porto.pt/wp-content/uploads/2019/08/beer_sunset_ent.jpg'
               )
 
 puts "Seeding Completed!"
