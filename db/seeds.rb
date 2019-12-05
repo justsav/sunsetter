@@ -218,7 +218,7 @@ Booking.create(place: Place.where(name: 'Lost In Esplanada Bar')[0],
 # Create Reviews
 Review.create(rating: 4,
               booking: Booking.first,
-              user: User.first,
+              user: User.find_by(first_name: 'Joao'),
               content: 'This was an excellent time! Loved this location.  Great drink specials nearby.',
               image: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/09/90/5e/99.jpg'
               )
