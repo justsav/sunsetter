@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :bookings do
     resources :reviews, only: [:index, :new, :create]
     resources :guests, only: [:new, :create]
+    post 'send_msg', to: "bookings#send_msg"
   end
   resources :reviews, except: [:index, :new, :create]
 end

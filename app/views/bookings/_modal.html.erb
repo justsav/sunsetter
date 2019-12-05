@@ -9,7 +9,7 @@
         <h5 class="modal-title" id="messageModalLabel">Please Input A Phone Number</h5>
       </div>
       <div class="modal-body">
-        <%= form_tag booking_path(@booking) , method: :get do |f| %>
+        <%= form_tag booking_send_msg_path(@booking) , method: :post do |f| %>
           <%= number_field_tag 'number' %>
       </div>
       <div class="footer">

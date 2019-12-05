@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
+  before_action :set_booking, only: :show
 
   def index
     @user = current_user
@@ -42,23 +43,42 @@ class BookingsController < ApplicationController
 
 
   def show
-    @booking = Booking.find(params[:id])
     @place = @booking.place.name
     @name = @booking.user.first_name.capitalize
     @city = @booking.place.city
     @date = @booking.date
-    @booking_id = @booking.id
+    # @booking_id = @booking.id
     @sunset = Sunset.where(date: @date, city: @city)[0]
-    if params[:number].present?
-      @send_message = SendMessage.new(@name, @date, @place, params[:number], @booking.id)
-      @send_message.send
-      sleep 3
-      # flash[:notice] = "Your invitation has been sent to #{params[:number]}"
-      # need error message
-      else
-        sleep 2
+    # @number = params[:number]
+    if params[:nr]
+      # raise
+      # @send_message = SendMessage.new(@name, @date, @place, @number, @booking.id)
+      # @send_message.send
+      # # @send_message.number = ''
+      # @number = nil
+
+      # sleep 3
+
+      flash[:notice] = "Your invitation has been sent to #{params[:nr]}"
     end
+    #params[:number] = nil
+
     @guest = Guest.new
+  end
+
+  def send_msg
+    @booking = Booking.find(params[:booking_id])
+    @name = @booking.user.first_name.capitalize
+    @date = @booking.date
+    @place = @booking.place.name
+    puts params
+    @number = params[:number]
+    @booking_id = @booking.id
+    @send_message = SendMessage.new(@name, @date, @place, @number, @booking.id)
+    @send_message.send
+
+    redirect_to booking_path(@booking, nr: @number)
+    # @send_message.number = ''
   end
 
   def update
@@ -71,6 +91,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 
   def booking_params
     params.require(:booking).permit(:name, :description)
