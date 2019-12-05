@@ -71,6 +71,7 @@
   margin-top: -40px;
   border-radius: 4px;
   margin-bottom: 100px;
+  padding: 32px;
 }
 
 .place-title {
@@ -144,4 +145,8 @@
     font-size: 15px;
     font-style: italic;
   }
+}
+
+#place-show-card {
+  padding: 25px;
 }

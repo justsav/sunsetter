@@ -47,21 +47,7 @@ class BookingsController < ApplicationController
     @name = @booking.user.first_name.capitalize
     @city = @booking.place.city
     @date = @booking.date
-    # @booking_id = @booking.id
     @sunset = Sunset.where(date: @date, city: @city)[0]
-    # @number = params[:number]
-
-      # raise
-      # @send_message = SendMessage.new(@name, @date, @place, @number, @booking.id)
-      # @send_message.send
-      # # @send_message.number = ''
-      # @number = nil
-
-      # sleep 3
-
-
-
-    #params[:number] = nil
 
     @guest = Guest.new
   end
@@ -79,16 +65,6 @@ class BookingsController < ApplicationController
 
     redirect_to booking_path(@booking, nr: @number)
     flash[:notice] = "Your invitation has been sent to #{@number}"
-    # @send_message.number = ''
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
-  def edit
   end
 
   private
