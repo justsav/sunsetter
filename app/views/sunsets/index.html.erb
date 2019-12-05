@@ -16,7 +16,8 @@
         <div class="sunset-card-info row">
           <div class="sunset-card-weather col-6">
             <p>Weather: <%= sunset.description.capitalize %></p>
-            <p>Temp Range: <%= sunset.tempmin %>-<%= sunset.tempmax %>F</p>
+            <p>Temp Range: <%= sunset.tempmin %>-<%= sunset.tempmax %>°C</p>
+            <% raise %>
           </div>
           <div class="sunset-card-sunset col-6">
             <p>Golden Hour - <%= ApplicationHelper.converted_time(sunset.gold_start) %></p>

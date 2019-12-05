@@ -39,7 +39,7 @@
             <p>Sunset Begin: <%= ApplicationHelper.converted_time(@sunset.start) %></p>
             <p>Sunset Actual: <%= ApplicationHelper.converted_time(@sunset.end) %></p>
             <p>Weather: <%= @sunset.description.capitalize %></p>
-            <p>Temp Range: <%= @sunset.tempmin %>-<%= @sunset.tempmax %>F</p>
+            <p>Temp Range: <%= @sunset.tempmin %>-<%= @sunset.tempmax %>°C</p>
           </div>
         </div>
 
