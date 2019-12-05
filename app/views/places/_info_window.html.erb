@@ -1,8 +1,14 @@
-<h5><%= place.name %></h5>
+<h5 id="marker-place-name"><%= place.name %></h5>
+<% if place.reviews.any? %>
+<% reviews_arr = [] %>
+<% place.reviews.each do |rev|%>
+  <% reviews_arr  << rev.rating %>
+  <% end %>
+  <%= '⭐️' * (reviews_arr.reduce(:+) / reviews_arr.length)%>
+  <% end %>
 <p><%= place.address %></p>
 <div class="info-window-image">
 <%= image_tag(place.image) %>
 </div>
 <br>
-<p><%= place.description %></p>
 
