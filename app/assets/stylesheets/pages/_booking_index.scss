@@ -1,5 +1,5 @@
 .bookings-index-bg {
-  // background: linear-gradient(#000125, #B3C4FF);
+  background: linear-gradient(#000125, #B3C4FF);
   display: flex;
   background-size: cover;
   background-position: center;
@@ -11,10 +11,13 @@
   grid-gap: 1rem;
 }
 
+.booking-body-container {
+  background: #f8f8f8;
+}
+
 .card-container {
   margin: 24px 70px 70px 70px;
 }
-
 
 .header-container {
   text-align: center;
