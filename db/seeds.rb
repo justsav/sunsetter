@@ -52,7 +52,7 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
             image: 'https://sumfinity.com/wp-content/uploads/2019/02/Sunset-View-Lisbon-Portugal-evening.jpg',
             address: 'Largo Monte, Lisbon',
             city: lisbon,
-            description: 'Perched upon a hillside in the Graca neighbourhood, Miradouro da Senhora do Monte, (Our Lady of the Hill), looks out over Lisbon and is the city's highest lookout point or miradouro. With such a position it means it offers uninterrupted 250 degree panoramic views across Lisbon from the stunning old quarters and castle to the downtown district of the city and beyond; it's a perfect opportunity to get some amazing photographs of the landscape and city as well as the Tagus River estuary and the Castle of Saint George.'
+            description: 'Perched upon a hillside in the Graca neighbourhood, Miradouro da Senhora do Monte, (Our Lady of the Hill), looks out over Lisbon and is the citys highest lookout point or miradouro. With such a position it means it offers uninterrupted 250 degree panoramic views across Lisbon from the stunning old quarters and castle to the downtown district of the city and beyond; its a perfect opportunity to get some amazing photographs of the landscape and city as well as the Tagus River estuary and the Castle of Saint George.'
           },
 
           { name: 'Hotel Mundial',
