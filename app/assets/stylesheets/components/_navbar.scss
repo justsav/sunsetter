@@ -101,6 +101,12 @@ a {
   }
 }
 
+.nav-item:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+
 .nav-link span {
   font-family: sans-serif;
 }
@@ -113,4 +119,8 @@ a {
   text-align: right;
   margin-right: 0px;
   padding-right: 0px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
