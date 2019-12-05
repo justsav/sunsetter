@@ -1,6 +1,6 @@
 module ApplicationHelper
   def self.converted_time(date)
-    date.strftime("%I:%M%p")
+    date.strftime("%l:%M%p").strip
   end
 
   def self.parse_day(date)
