@@ -1,4 +1,5 @@
 class SendMessage
+  attr_accessor :number
   def initialize(name, date, location, number, booking_id)
     @name = name
     @date = date
