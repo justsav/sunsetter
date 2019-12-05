@@ -5,7 +5,7 @@
       <div class="row">
         <div class="bookings-new-detail col-7">
           <h1>Get Excited.</h1>
-          <h3 style="margin-bottom: 30px">You're planning sunset for <%= @place['name']%>.</h3>
+          <h3 style="margin-bottom: 30px">You're planning a sunset for <%= @place['name']%>.</h3>
           <%= simple_form_for(@booking) do |f| %>
           <%= f.input :name, label: 'Name This Event:', placeholder: "My Cool Sunset" %>
           <%= f.input :description, as: :text, input_html: {rows: 3}, label: 'Event Description:', placeholder: "Let friends know more details about your event." %>
