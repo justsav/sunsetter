@@ -19,31 +19,53 @@ Place.destroy_all
 City.destroy_all
 Booking.destroy_all
 
+# SEED CITY
 lisbon = City.create(name: 'Lisbon', latitude: 38.736946, longitude: -9.142685)
-WEATHER = [{description: 'clear',
+
+# SEED WEATHER & SUNSETS
+WEATHER = [{description: 'Clear',
             icon:'http://openweathermap.org/img/wn/01d@2x.png'
            },
-           { description:'broken clouds',
+           { description:'Broken clouds',
              icon: 'http://openweathermap.org/img/wn/04d@2x.png'
           },
 
-           { description:'scatered clouds',
+           { description:'Scattered clouds',
              icon: 'http://openweathermap.org/img/wn/03d@2x.png'
           },
-           { description:'light rain',
+           { description:'Light rain',
              icon: 'http://openweathermap.org/img/wn/10d@2x.png'
           }]
 
+d = Date.today
+m = 14
+10.times do
+  weather_arr = WEATHER.sample
+  Sunset.create(city: lisbon,
+                start: "5:#{m.round}pm",
+                end: "5:#{m+3}pm",
+                gold_start: "4:#{m+22}pm",
+                date: d,
+                description: weather_arr[:description],
+                icon: weather_arr[:icon],
+                tempmin: "#{rand(9..13)}°C",
+                tempmax: "#{rand(15..18)}°C"
+                )
+  m += 0.33
+  d += 1
+end
+
 PLACES = [{ name: 'Miradouro Santa Luzia',
             image: 'https://img.theculturetrip.com/768x432/wp-content/uploads/2017/03/shutterstock_603926126-ttstudio.jpg',
-            address: 'Largo Santa Luzia, Lisbon',
+            address: 'R. Norberto de Araújo 22A, 1100-117 Lisboa',
             city: lisbon,
-            description: 'This popular observation deck with a pergola offers dramatic views of Lisbon & the Tagus River.  This romantic terrace by the church of Santa Luzia introduces visitors to Alfama with a sweeping view over its houses, churches, and the Tagus River. On an outside wall of the church are two tile panels, one of Comercio Square before the earthquake, and another showing Christians attacking St. Georges Castle in 1147. The café on the terrace is a good place for a drink before climbing to the castle nearby.'
+            description: 'This popular observation deck with a pergola offers dramatic views of Lisbon & the Tagus River.  This romantic terrace by the church of Santa Luzia introduces visitors to Alfama with a sweeping view over its houses, churches, and the Tagus River. The café on the terrace is a good place for a drink before climbing to the castle nearby.'
+            #
           },
 
           { name: 'Cais das Colunas',
             image: 'https://voss-photography.com/wp-content/uploads/2017/11/lissabon-cais-das-colunas-sonnenuntergang.jpg?7f1c30',
-            address: 'Cais das Colunas',
+            address: 'Praça do Comércio, Lisboa',
             city: lisbon,
             description: 'Its by Commerce Square, on the Quay of the Columns, which tourists are most often surprised by the colors of the Lisbon sky at dusk, especially in the fall. It is next to Praça do Comércio, in Cais das Colunas, that tourists are most surprised by the colors of the Lisbon sky at dusk, especially in the fall.'
           },
@@ -52,22 +74,22 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
             image: 'https://sumfinity.com/wp-content/uploads/2019/02/Sunset-View-Lisbon-Portugal-evening.jpg',
             address: 'Largo Monte, Lisbon',
             city: lisbon,
-            description: 'Perched upon a hillside in the Graca neighbourhood, Miradouro da Senhora do Monte, (Our Lady of the Hill), looks out over Lisbon and is the citys highest lookout point or miradouro. With such a position it means it offers uninterrupted 250 degree panoramic views across Lisbon from the stunning old quarters and castle to the downtown district of the city and beyond; its a perfect opportunity to get some amazing photographs of the landscape and city as well as the Tagus River estuary and the Castle of Saint George.'
+            description: 'Perched upon a hillside in the Graca neighbourhood, Miradouro da Senhora do Monte, (Our Lady of the Hill), looks out over Lisbon and is the citys highest lookout point or miradouro. With such a position it means it offers uninterrupted 250 degree panoramic views across Lisbon from the stunning old quarters and castle to the downtown district of the city and beyond.'
           },
 
           { name: 'Hotel Mundial',
             image: 'https://www.publituris.pt/wp-content/uploads/2017/05/Rooftop-12.jpg',
             address: 'Praça Martim Moniz 2',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
-
+            description: 'The Hotel Mundial Rooftop Bar lights up after sunset until late at night in Martim Moniz hosting its famous sunset parties. Attendees can expect a DJ and sunset party every Friday. Chill Out Sessions are held every Wednesday and Yoga Sessions on Sunday.'
           },
 
           { name: 'Amooreiras 360 Panoramic View',
             image: "https://i2.wp.com/infocul.pt/wp-content/uploads/2017/04/Amoreiras-360%C3%82%C2%BA-Panoramic-View-Dia-Internacional-dos-Monumentos-e-S%C3%83%C2%ADtios.jpg?resize=800%2C534",
-            address: 'Amoreiras Shopping Center, Av. Eng. Duarte Pacheco 1070',
+            address: 'R. Carlos Alberto da Mota Pinto 72, 1250-096 Lisboa',
             city: lisbon,
             description: 'Lisbons highest viewpoint is waiting for you with a unique view over the portuguese capital and its most iconic landmarks. An exceptional experience on the top of the Amoreiras Shopping Center which is in itself one of the highlights of the citys landscape and shopping experience. Open everyday.'
+            #
           },
 
           { name: 'Miradouro do Monte Agudo',
@@ -79,38 +101,34 @@ PLACES = [{ name: 'Miradouro Santa Luzia',
 
           { name: 'Alameda',
             image: 'https://media2.trover.com/T/547fe68bd809d85c0b00036e/fixedw_large_4x.jpg',
-            address: '38°44′12″N 9°08′02″W',
+            address: 'Alameda Dom Afonso Henriques',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
-
+            description: 'Alameda is definitely an off the beaten path location, although it offers one of the most spacious places within the city. On top of the impressive fountain Fonte Luminosa there is a balcony overlooking the Alameda square. If you go further and climb up the hill behind the balcony, you’ll find one of the hidden sunset spots of Lisbon.'
           },
 
           { name:'Restaurante Panorâmico de Monsanto',
             image:'https://www.panorama-restaurante.com/pt/resourcefiles/homeimages/panorama-restaurante_1.jpg',
-            address: 'Estr. da Bela Vista',
+            address: 'Estr. da Bela Vista 100, Lisboa',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
-
+            description: 'The Panoramic Restaurant of Monsanto is a building located in Montes Claros, in Monsanto, Lisbon, built in the Estado Novo. The building is by the architect Chaves Costa. It is a circular building with a radius of 16 meters, five floors and a panoramic view of 270 degrees. After decades of abandonment, it was converted into a municipal viewpoint.'
+            #
           },
 
           { name:'Miradouro Portas do Sol',
             image:'https://img.theculturetrip.com/768x432/wp-content/uploads/2017/01/porto-1972486_1920.jpg',
-            address: 'Miradouro da Senhora do Monte, Lisbon',
+            address: 'Largo Portas do Sol, 1100-411 Lisboa',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
+            description: 'Just a few steps from Miradouro de Santa Luzia, a balcony opens onto the river, offering truly spectacular views over Alfama. Faced by soft-toned buildings and the Decorative Arts Museum, this is a popular stop for photographers, with its stunning view from São Vicente de Fora Monastery to the waterfront.'
 
           },
 
           { name:'Lost in Esplanada Bar',
             image:'https://media-cdn.tripadvisor.com/media/photo-s/11/37/ef/f9/terraco-coberto-panoramico.jpg',
-            address: 'R. Dom Pedro V Nº56-D',
+            address: 'R. Dom Pedro V 56B, 1250-094 Lisboa',
             city: lisbon,
-            description: Faker::ChuckNorris.fact
-
-          }
-
-]
-
+            description: 'Its easy to lose track of time as we step into the open space of the terrace, just behind the Lost In. The view, one of the best in town, is all we can want to follow a menu that goes from natural juices to sangrias, of course, for wines and cocktails.'
+            #
+          }]
 
 PLACES.each do |place|
   Place.create(
@@ -123,32 +141,10 @@ PLACES.each do |place|
 end
 
 Place.create(name: 'Park Bar',
-           description: Faker::ChuckNorris.fact,
+           description: 'Chilled vibes on a rooftop of a car park. Amazing view and great interior. Really cool bar, with good music. I’d definitely recommend coming here on your visit to Lisbon. I came when it was dark but I can imagine the view is even more amazing during the day or sunset.',
            address: '58 Bairro Alto Lisbon',
            image: 'https://portugalconfidential.com/wp-content/uploads/2014/04/Park-Restaurante-Bar-Lisbon-1.jpg',
            city: lisbon)
-
-
-# dweather and sunset seeds
-
-
-d = Date.today
-10.times do
-  weather_arr = WEATHER.sample
-Sunset.create(city: lisbon,
-              start: "5:#{rand(10..27)}pm",
-              end: "5:#{rand(35..45)}pm",
-              gold_start: "4:#{rand(40..59)}pm",
-              date: d,
-              description: weather_arr[:description],
-              icon: weather_arr[:icon],
-              tempmin: "#{rand(32..50)}°F",
-              tempmax: "#{rand(51..72)}°F"
-              )
-d += 1
-end
-puts "Seeding Completed!"
-
 
 # Create User
 User.create(first_name: 'Joao',
@@ -156,7 +152,7 @@ User.create(first_name: 'Joao',
             password: 'password'
             )
 User.create(first_name: 'Emily',
-            email: 'andre@gmail.com',
+            email: 'emily@gmail.com',
             password: 'password'
             )
 
@@ -183,3 +179,5 @@ Review.create(rating: 5,
               content: 'Ive been coming here for a long time.  Would sunset here again, for sure.',
               image: 'https://i.pinimg.com/originals/51/71/97/51719735d5b52a87892f9936b3c3429b.jpg'
               )
+
+puts "Seeding Completed!"
