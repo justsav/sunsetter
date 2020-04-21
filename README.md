@@ -17,7 +17,8 @@ Ruby-on-Rails Application ’Sunsetter’: A social activity planning and connec
 * Step 4: Share the plan with others via SMS/Text, and view feedback
 * Review past and future sunset plans
 
-## Search now for "Lisbon" in our [Demo](http://sunsetter.site/)
+## Watch our live demo [here](https://youtu.be/lUUJoEvs8Uk?t=630)
+## Search now for "Lisbon" on our [live site](http://sunsetter.site/)
 ![Screen Shot 2020-04-20 at 18 20 50](https://user-images.githubusercontent.com/5489258/79811354-414b8980-833b-11ea-9004-ae0a109ed23f.png)
 ![Screen Shot 2020-04-20 at 18 21 34](https://user-images.githubusercontent.com/5489258/79811356-43ade380-833b-11ea-8428-9e0bca9594dd.png)
 ![Screen Shot 2020-04-20 at 18 21 51](https://user-images.githubusercontent.com/5489258/79811358-46103d80-833b-11ea-9f46-6dde89d87416.png)
